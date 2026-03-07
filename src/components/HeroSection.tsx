@@ -1,4 +1,3 @@
-import heroBg from "@/assets/hero-bg.jpg";
 import { useLang } from "@/contexts/LangContext";
 
 export function HeroSection() {
