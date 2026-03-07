@@ -1,4 +1,3 @@
-import heroBg from "@/assets/hero-bg.jpg";
 import { useLang } from "@/contexts/LangContext";
 
 export function HeroSection() {
@@ -11,11 +10,8 @@ export function HeroSection() {
       style={{
         backgroundImage: `
           radial-gradient(circle at top, rgba(201,166,107,0.18), transparent 55%),
-          linear-gradient(to bottom, rgba(0,0,0,0.72), rgba(5,6,8,0.97)),
-          url(${heroBg})
+          linear-gradient(to bottom, rgba(5,6,8,0.98), rgba(5,6,8,1))
         `,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
         paddingTop: "90px",
       }}
     >
