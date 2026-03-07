@@ -1,13 +1,25 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { LangProvider } from "@/contexts/LangContext";
+import { SiteHeader } from "@/components/SiteHeader";
+import { HeroSection } from "@/components/HeroSection";
+import { MenuSection } from "@/components/MenuSection";
+import { AboutSection } from "@/components/AboutSection";
+import { ReviewsSection } from "@/components/ReviewsSection";
+import { ReservationSection } from "@/components/ReservationSection";
+import { SiteFooter } from "@/components/SiteFooter";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <LangProvider>
+      <SiteHeader />
+      <main>
+        <HeroSection />
+        <MenuSection />
+        <AboutSection />
+        <ReviewsSection />
+        <ReservationSection />
+      </main>
+      <SiteFooter />
+    </LangProvider>
   );
 };
 
