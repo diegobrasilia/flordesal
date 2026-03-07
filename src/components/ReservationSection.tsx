@@ -11,14 +11,14 @@ export function ReservationSection() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background-light">
+    <section id="contact" className="py-24 bg-background text-foreground">
       <div className="mx-auto max-w-[1100px] px-6 grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-10">
         {/* Form */}
         <div>
-          <h2 className="font-title text-[2rem] text-foreground-dark mb-2">
+          <h2 className="font-title text-[2rem] mb-2">
             {t("Reservas", "Reservations")}
           </h2>
-          <p className="text-muted-foreground mb-6">
+          <p className="text-foreground-muted mb-6">
             {t(
               "Para qualquer reserva ou pedido de evento privado no Flor de Sal, preencha o formulário abaixo. Entraremos em contacto o mais rapidamente possível.",
               "For any booking or private event request at Flor de Sal, please fill in the form below. We will get back to you as soon as possible."
@@ -26,11 +26,11 @@ export function ReservationSection() {
           </p>
 
           {submitted ? (
-            <div className="bg-white rounded-[18px] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.14)] border border-black/[0.05] text-center">
-              <p className="text-[1.1rem] font-title text-foreground-dark mb-1">
+            <div className="bg-white/5 border border-white/10 rounded-[18px] p-6 text-center">
+              <p className="text-[1.1rem] font-title text-foreground mb-1">
                 {t("Pedido enviado!", "Request sent!")}
               </p>
-              <p className="text-muted-foreground text-[0.9rem]">
+              <p className="text-foreground-muted text-[0.9rem]">
                 {t("Entraremos em contacto brevemente.", "We will get back to you shortly.")}
               </p>
               <button
@@ -43,60 +43,60 @@ export function ReservationSection() {
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="bg-white rounded-[18px] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.14)] border border-black/[0.05] space-y-3.5"
+              className="bg-white/[0.04] border border-white/10 rounded-[18px] p-6 space-y-3.5"
             >
               {/* Name */}
               <div>
-                <label className="block text-[0.8rem] tracking-[0.15em] uppercase text-[#8c8577] mb-1">
+                <label className="block text-[0.8rem] tracking-[0.15em] uppercase text-foreground-muted mb-1">
                   {t("Nome completo", "Full name")}
                 </label>
                 <input
                   type="text"
                   required
                   placeholder={t("O seu nome", "Your name")}
-                  className="w-full px-3 py-2.5 rounded-full border border-[#d3cdc2] text-[0.9rem] outline-none transition-all focus:border-accent focus:shadow-[0_0_0_1px_rgba(201,166,107,0.4)] focus:bg-[#fdfaf6] font-body"
+                  className="w-full px-3 py-2.5 rounded-full border border-white/10 bg-white/5 text-foreground text-[0.9rem] outline-none transition-all placeholder:text-foreground-muted/50 focus:border-accent focus:shadow-[0_0_0_1px_rgba(201,166,107,0.4)] font-body"
                 />
               </div>
 
               {/* Email */}
               <div>
-                <label className="block text-[0.8rem] tracking-[0.15em] uppercase text-[#8c8577] mb-1">
+                <label className="block text-[0.8rem] tracking-[0.15em] uppercase text-foreground-muted mb-1">
                   {t("Endereço de e-mail", "Email address")}
                 </label>
                 <input
                   type="email"
                   required
                   placeholder={t("voce@example.com", "you@example.com")}
-                  className="w-full px-3 py-2.5 rounded-full border border-[#d3cdc2] text-[0.9rem] outline-none transition-all focus:border-accent focus:shadow-[0_0_0_1px_rgba(201,166,107,0.4)] focus:bg-[#fdfaf6] font-body"
+                  className="w-full px-3 py-2.5 rounded-full border border-white/10 bg-white/5 text-foreground text-[0.9rem] outline-none transition-all placeholder:text-foreground-muted/50 focus:border-accent focus:shadow-[0_0_0_1px_rgba(201,166,107,0.4)] font-body"
                 />
               </div>
 
               {/* Date */}
               <div>
-                <label className="block text-[0.8rem] tracking-[0.15em] uppercase text-[#8c8577] mb-1">
+                <label className="block text-[0.8rem] tracking-[0.15em] uppercase text-foreground-muted mb-1">
                   {t("Data pretendida", "Desired date")}
                 </label>
                 <input
                   type="date"
                   required
-                  className="w-full px-3 py-2.5 rounded-full border border-[#d3cdc2] text-[0.9rem] outline-none transition-all focus:border-accent focus:shadow-[0_0_0_1px_rgba(201,166,107,0.4)] focus:bg-[#fdfaf6] font-body"
+                  className="w-full px-3 py-2.5 rounded-full border border-white/10 bg-white/5 text-foreground text-[0.9rem] outline-none transition-all focus:border-accent focus:shadow-[0_0_0_1px_rgba(201,166,107,0.4)] font-body"
                 />
               </div>
 
               {/* Time & Guests */}
               <div className="grid grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-[0.8rem] tracking-[0.15em] uppercase text-[#8c8577] mb-1">
+                  <label className="block text-[0.8rem] tracking-[0.15em] uppercase text-foreground-muted mb-1">
                     {t("Hora", "Time")}
                   </label>
                   <input
                     type="time"
                     required
-                    className="w-full px-3 py-2.5 rounded-full border border-[#d3cdc2] text-[0.9rem] outline-none transition-all focus:border-accent focus:shadow-[0_0_0_1px_rgba(201,166,107,0.4)] focus:bg-[#fdfaf6] font-body"
+                    className="w-full px-3 py-2.5 rounded-full border border-white/10 bg-white/5 text-foreground text-[0.9rem] outline-none transition-all focus:border-accent focus:shadow-[0_0_0_1px_rgba(201,166,107,0.4)] font-body"
                   />
                 </div>
                 <div>
-                  <label className="block text-[0.8rem] tracking-[0.15em] uppercase text-[#8c8577] mb-1">
+                  <label className="block text-[0.8rem] tracking-[0.15em] uppercase text-foreground-muted mb-1">
                     {t("Nº de pessoas", "Guests")}
                   </label>
                   <input
@@ -105,20 +105,20 @@ export function ReservationSection() {
                     max={20}
                     defaultValue={2}
                     required
-                    className="w-full px-3 py-2.5 rounded-full border border-[#d3cdc2] text-[0.9rem] outline-none transition-all focus:border-accent focus:shadow-[0_0_0_1px_rgba(201,166,107,0.4)] focus:bg-[#fdfaf6] font-body"
+                    className="w-full px-3 py-2.5 rounded-full border border-white/10 bg-white/5 text-foreground text-[0.9rem] outline-none transition-all focus:border-accent focus:shadow-[0_0_0_1px_rgba(201,166,107,0.4)] font-body"
                   />
                 </div>
               </div>
 
               {/* Message */}
               <div>
-                <label className="block text-[0.8rem] tracking-[0.15em] uppercase text-[#8c8577] mb-1">
+                <label className="block text-[0.8rem] tracking-[0.15em] uppercase text-foreground-muted mb-1">
                   {t("Mensagem (alergias, pedidos especiais…)", "Message (allergies, special requests…)")}
                 </label>
                 <textarea
                   rows={4}
                   placeholder={t("A sua mensagem", "Your message")}
-                  className="w-full px-3 py-2.5 rounded-[14px] border border-[#d3cdc2] text-[0.9rem] outline-none transition-all focus:border-accent focus:shadow-[0_0_0_1px_rgba(201,166,107,0.4)] focus:bg-[#fdfaf6] resize-y font-body"
+                  className="w-full px-3 py-2.5 rounded-[14px] border border-white/10 bg-white/5 text-foreground text-[0.9rem] outline-none transition-all placeholder:text-foreground-muted/50 focus:border-accent focus:shadow-[0_0_0_1px_rgba(201,166,107,0.4)] resize-y font-body"
                 />
               </div>
 
@@ -129,7 +129,7 @@ export function ReservationSection() {
                 {t("Enviar pedido", "Send request")}
               </button>
 
-              <p className="text-[0.8rem] text-[#978f83] mt-2">
+              <p className="text-[0.8rem] text-foreground-muted/60 mt-2">
                 {t(
                   "Este formulário é um exemplo. Posteriormente poderá ser ligado a um sistema de reservas.",
                   "This form is an example. It can later be connected to a booking system."
@@ -141,14 +141,14 @@ export function ReservationSection() {
 
         {/* Contact info */}
         <div>
-          <h3 className="text-[0.95rem] tracking-[0.18em] uppercase text-foreground-dark font-semibold mt-0 mb-2">
+          <h3 className="text-[0.95rem] tracking-[0.18em] uppercase text-accent font-semibold mt-0 mb-2">
             {t("Onde estamos", "Find us")}
           </h3>
-          <p className="text-[0.9rem] text-muted-foreground mb-3">
+          <p className="text-[0.9rem] text-foreground-muted mb-3">
             Flor de Sal, 5370-210 Mirandela
           </p>
 
-          <div className="rounded-[14px] border border-dashed border-black/[0.18] p-3.5 mb-5 text-center bg-[#fdfaf6]">
+          <div className="rounded-[14px] border border-white/10 p-3.5 mb-5 text-center bg-white/[0.03]">
             <iframe
               src="https://www.google.com/maps?q=41.48622215845754,-7.186533015605368&z=19&output=embed"
               loading="lazy"
@@ -157,43 +157,33 @@ export function ReservationSection() {
               className="w-full h-[230px] border-0 rounded-[10px] block"
               title="Flor de Sal map"
             />
-            <p className="mt-2 text-[0.8rem] text-[#7b746b]">
+            <p className="mt-2 text-[0.8rem] text-foreground-muted">
               {t("Vista aproximada da localização do Flor de Sal.", "Approximate map view of Flor de Sal.")}
             </p>
           </div>
 
-          <h3 className="text-[0.95rem] tracking-[0.18em] uppercase text-foreground-dark font-semibold mb-2">
+          <h3 className="text-[0.95rem] tracking-[0.18em] uppercase text-accent font-semibold mb-2">
             {t("Contacto direto", "Direct contact")}
           </h3>
-          <p className="text-[0.9rem] mt-0 mb-2.5 text-muted-foreground">
-            <strong className="text-foreground-dark">{t("Telefone", "Phone")} :</strong>{" "}
+          <p className="text-[0.9rem] mt-0 mb-2.5 text-foreground-muted">
+            <strong className="text-foreground">{t("Telefone", "Phone")} :</strong>{" "}
             <a href="tel:+351938627619" className="text-accent hover:underline">
               {t("938 627 619", "+351 938 627 619")}
             </a>
           </p>
-          <p className="text-[0.9rem] mt-0 mb-2.5 text-muted-foreground">
-            <strong className="text-foreground-dark">E-mail :</strong>{" "}
+          <p className="text-[0.9rem] mt-0 mb-2.5 text-foreground-muted">
+            <strong className="text-foreground">E-mail :</strong>{" "}
             <a href="mailto:flordesalrestaurante2024@gmail.com" className="text-accent hover:underline break-all">
               flordesalrestaurante2024@gmail.com
             </a>
           </p>
-          <p className="text-[0.9rem] mt-0 text-muted-foreground">
-            <strong className="text-foreground-dark">{t("Redes sociais", "Social media")} :</strong>{" "}
-            <a
-              href="https://www.instagram.com/restaurante.flordesal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:underline"
-            >
+          <p className="text-[0.9rem] mt-0 text-foreground-muted">
+            <strong className="text-foreground">{t("Redes sociais", "Social media")} :</strong>{" "}
+            <a href="https://www.instagram.com/restaurante.flordesal" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
               Instagram
             </a>
             {" · "}
-            <a
-              href="https://www.facebook.com/flordesalrestaurante"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:underline"
-            >
+            <a href="https://www.facebook.com/flordesalrestaurante" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
               Facebook
             </a>
           </p>
