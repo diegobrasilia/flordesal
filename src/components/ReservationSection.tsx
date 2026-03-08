@@ -106,7 +106,7 @@ export function ReservationSection() {
               </div>
 
               {/* Date + Time */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className={labelClass}>{t("Data", "Date")}</label>
                   <Popover>
@@ -119,7 +119,7 @@ export function ReservationSection() {
                           !selectedDate && "text-foreground-muted"
                         )}
                       >
-                        {selectedDate ? format(selectedDate, "dd/MM/yyyy") : t("Escolha uma data", "Pick a date")}
+                        {selectedDate ? format(selectedDate, "dd/MM/yyyy") : t("Escolha", "Date")}
                         <CalendarIcon className="h-4 w-4 opacity-50 shrink-0" />
                       </button>
                     </PopoverTrigger>
