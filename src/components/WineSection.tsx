@@ -81,7 +81,7 @@ export function WineSection() {
   const { t } = useLang();
 
   return (
-    <section className="py-0 pb-24 bg-background-light">
+    <section id="vinhos" className="py-0 pb-24 bg-background-light scroll-mt-20">
       <div className="mx-auto max-w-[1100px] px-6 pt-10 border-t border-foreground-dark/10">
         <p className="text-[0.72rem] tracking-[0.3em] uppercase text-accent mb-2">
           {t("Carta de vinhos", "Wine list")}
