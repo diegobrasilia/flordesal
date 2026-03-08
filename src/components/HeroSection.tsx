@@ -7,7 +7,7 @@ export function HeroSection() {
   return (
     <section
       id="accueil"
-      className="relative min-h-[100svh] md:min-h-screen flex items-center text-foreground overflow-hidden"
+      className="relative min-h-[100dvh] flex items-center text-foreground overflow-hidden"
       style={{ paddingTop: "90px" }}
     >
       {/* Background image */}
