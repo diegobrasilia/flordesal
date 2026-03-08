@@ -36,7 +36,7 @@ export function ReservationSection() {
         body: {
           name: nameRef.current?.value,
           email: emailRef.current?.value,
-          date: dateRef.current?.value,
+          date: selectedDate ? format(selectedDate, "dd/MM/yyyy") : "",
           time: timeRef.current?.value,
           guests: guestsRef.current?.value || null,
           message: messageRef.current?.value || null,
@@ -109,7 +109,31 @@ export function ReservationSection() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className={labelClass}>{t("Data", "Date")}</label>
-                  <input ref={dateRef} type="date" required className={inputClass} />
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <button
+                        type="button"
+                        className={cn(
+                          inputClass,
+                          "flex items-center justify-between cursor-pointer",
+                          !selectedDate && "text-foreground-muted"
+                        )}
+                      >
+                        {selectedDate ? format(selectedDate, "dd/MM/yyyy") : t("Escolha uma data", "Pick a date")}
+                        <CalendarIcon className="h-4 w-4 opacity-50 shrink-0" />
+                      </button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-auto p-0 z-[200]" align="start">
+                      <Calendar
+                        mode="single"
+                        selected={selectedDate}
+                        onSelect={setSelectedDate}
+                        disabled={(date) => date < new Date(new Date().setHours(0,0,0,0))}
+                        initialFocus
+                        className={cn("p-3 pointer-events-auto")}
+                      />
+                    </PopoverContent>
+                  </Popover>
                 </div>
                 <div>
                   <label className={labelClass}>{t("Hora", "Time")}</label>
