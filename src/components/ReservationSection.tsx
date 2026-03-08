@@ -97,6 +97,16 @@ export function ReservationSection() {
                 </div>
               </div>
 
+              {/* Guests */}
+              <div>
+                <label className={labelClass}>{t("Nº de pessoas", "Number of guests")}</label>
+                <input
+                  type="number"
+                  min={1}
+                  placeholder={t("Nº de pessoas", "Number of guests")}
+                  className={inputClass}
+                />
+              </div>
 
               {/* Message */}
               <div>
