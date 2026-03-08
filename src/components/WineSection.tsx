@@ -96,17 +96,32 @@ export function WineSection() {
           )}
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
-          {Object.values(wineData).map((col) => (
+        {/* Tintos — 2 colonnes côte à côte */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 mb-6">
+          {[wineData.tintos, wineData.tintos2].map((col) => (
             <div key={col.title.pt}>
-              <h3 className="font-title text-[1.4rem] tracking-[-0.01em] text-foreground-dark mt-0 mb-4 pb-2 border-b border-foreground-dark/10">
+              <h3 className="font-title text-[1.4rem] tracking-[-0.01em] text-foreground-dark mt-0 mb-3 pb-2 border-b border-foreground-dark/10">
                 {col.title.pt}
               </h3>
               {col.items.map((item) => (
-                <div
-                  key={item.name}
-                  className="flex justify-between items-center py-2.5 border-b border-foreground-dark/[0.06] last:border-0"
-                >
+                <div key={item.name} className="flex justify-between items-center py-2 border-b border-foreground-dark/[0.06] last:border-0">
+                  <span className="text-[0.88rem] text-foreground-dark/80 pr-3">{item.name}</span>
+                  <span className="text-[0.85rem] text-accent shrink-0">{item.price}</span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* Brancos, Rosés, Espumantes — 3 colonnes */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-6">
+          {[wineData.brancos, wineData.roses, wineData.espumantes].map((col) => (
+            <div key={col.title.pt}>
+              <h3 className="font-title text-[1.4rem] tracking-[-0.01em] text-foreground-dark mt-0 mb-3 pb-2 border-b border-foreground-dark/10">
+                {col.title.pt}
+              </h3>
+              {col.items.map((item) => (
+                <div key={item.name} className="flex justify-between items-center py-2 border-b border-foreground-dark/[0.06] last:border-0">
                   <span className="text-[0.88rem] text-foreground-dark/80 pr-3">{item.name}</span>
                   <span className="text-[0.85rem] text-accent shrink-0">{item.price}</span>
                 </div>
