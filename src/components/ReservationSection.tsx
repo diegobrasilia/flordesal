@@ -145,9 +145,9 @@ export function ReservationSection() {
             {t("Onde estamos", "Find us")}
           </p>
 
-          <div className="rounded-xl overflow-hidden border border-white/15 mb-6">
+          <div className="rounded-xl overflow-hidden border border-white/15 mb-2">
             <iframe
-              src="https://www.google.com/maps?q=41.4861859,-7.1863967&z=17&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d603.6!2d-7.1863967!3d41.4861859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3b0ece25fb40a7%3A0x40ac1712a19297c8!2sFlor%20de%20Sal!5e0!3m2!1spt!2spt!4v1700000000000"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
@@ -155,6 +155,15 @@ export function ReservationSection() {
               title="Flor de Sal map"
             />
           </div>
+          <a
+            href="https://www.google.com/maps/place/Flor+de+Sal/@41.4861859,-7.1863967,17z"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-[0.78rem] text-accent hover:underline mb-5"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            {t("Abrir no Google Maps", "Open in Google Maps")}
+          </a>
 
           <ul className="space-y-4 text-[0.9rem]">
             <li>
