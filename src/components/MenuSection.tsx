@@ -55,14 +55,14 @@ export function MenuSection() {
     <section id="menu" className="py-24 bg-background-light">
       <div className="mx-auto max-w-[1100px] px-6">
         <p className="text-[0.72rem] tracking-[0.3em] uppercase text-accent mb-2">
-          {t("Ementa sazonal", "Seasonal menu")}
+          {t("Menu sazonal", "Seasonal menu")}
         </p>
         <h2 className="font-title text-[2rem] text-foreground-dark mb-2">
-          {t("Ementa", "Menu")}
+          Menu
         </h2>
         <p className="text-foreground-dark-muted max-w-[36rem] mt-0 mb-0 text-[0.9rem]">
           {t(
-            "Ementa curta e sazonal, inspirada no terroir português e nos sabores mediterrânicos.",
+            "Menu curto e sazonal, inspirado no terroir português e nos sabores mediterrânicos.",
             "A short, seasonal menu inspired by Portuguese terroir and Mediterranean flavours."
           )}
         </p>
@@ -93,7 +93,7 @@ export function MenuSection() {
 
         <p className="mt-8 text-[0.82rem] text-foreground-dark-muted border-t border-foreground-dark/[0.07] pt-5">
           {t(
-            "Ementa apresentada a título de exemplo. Contacte-nos para conhecer os pratos e sugestões do momento.",
+            "Menu apresentado a título de exemplo. Contacte-nos para conhecer os pratos e sugestões do momento.",
             "Menu shown as an example only. Please contact us to know the current dishes and specials."
           )}
         </p>
