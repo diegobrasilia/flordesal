@@ -7,6 +7,7 @@
 @layer base {
   :root {
     /* === Flor de Sal Design System — Chic & Modern === */
+    --app-height: 100svh; /* overridden by JS for iOS Safari */
 
     /* Dark backgrounds — pure, ink-black tones */
     --background: 0 0% 4%;           /* #0a0a0a */
@@ -116,6 +117,12 @@
 /* box-sizing fix */
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+/* iOS Safari full-height hero fix */
+.hero-full-height {
+  min-height: 100svh; /* fallback */
+  min-height: var(--app-height, 100svh);
 }
 
 /* Hero fade-in-up animation */

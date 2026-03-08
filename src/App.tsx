@@ -8,6 +8,15 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Fix iOS Safari viewport height — sets --app-height on root
+if (typeof window !== "undefined") {
+  const setAppHeight = () =>
+    document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`);
+  window.addEventListener("resize", setAppHeight);
+  window.addEventListener("orientationchange", setAppHeight);
+  setAppHeight();
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
