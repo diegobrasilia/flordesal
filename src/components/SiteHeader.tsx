@@ -5,30 +5,30 @@ export function SiteHeader() {
   const { lang, setLang, t } = useLang();
 
   const navLinks = [
-    { href: "#accueil", label: t("Início", "Home") },
-    { href: "#menu", label: "Menu" },
-    { href: "#vinhos", label: t("Vinhos", "Wines") },
-    { href: "#apropos", label: t("Sobre", "About") },
-    { href: "#reviews", label: t("Avaliações", "Reviews") },
-    { href: "#contact", label: t("Reservas", "Reservations") },
-  ];
+  { href: "#accueil", label: t("Início", "Home") },
+  { href: "#menu", label: "Menu" },
+  { href: "#vinhos", label: t("Vinhos", "Wines") },
+  { href: "#apropos", label: t("Sobre", "About") },
+  { href: "#reviews", label: t("Avaliações", "Reviews") },
+  { href: "#contact", label: t("Reservas", "Reservations") }];
+
 
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.05]"
       style={{
         backdropFilter: "blur(20px) saturate(180%)",
-        background: "hsl(0 0% 4% / 0.88)",
-      }}
-    >
+        background: "hsl(0 0% 4% / 0.88)"
+      }}>
+      
       <div className="mx-auto max-w-[1100px] px-6 flex items-center justify-between gap-4 py-5">
         {/* Logo */}
         <a href="#accueil" className="flex items-center gap-3">
           <img
             src={logo}
             alt="Flor de Sal"
-            className="h-9 w-9 rounded-full object-cover"
-          />
+            className="h-9 w-9 rounded-full object-cover" />
+          
           <span className="font-title text-[1.1rem] tracking-[0.15em] text-foreground">
             Flor de Sal
           </span>
@@ -36,34 +36,34 @@ export function SiteHeader() {
 
         {/* Nav */}
         <nav className="hidden md:flex items-center">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="ml-7 text-[0.72rem] tracking-[0.18em] uppercase text-foreground-muted pb-0.5 border-b border-transparent transition-all duration-200 hover:text-foreground hover:border-accent"
-            >
+          {navLinks.map((link) =>
+          <a
+            key={link.href}
+            href={link.href}
+            className="ml-7 text-[0.72rem] tracking-[0.18em] uppercase text-foreground-muted pb-0.5 border-b border-transparent transition-all duration-200 hover:border-accent text-secondary">
+            
               {link.label}
             </a>
-          ))}
+          )}
         </nav>
 
         {/* Lang switcher */}
         <div className="flex items-center gap-1">
-          {(["pt", "en"] as const).map((l) => (
-            <button
-              key={l}
-              onClick={() => setLang(l)}
-              className={`px-3 py-1.5 rounded text-[0.65rem] tracking-[0.18em] uppercase transition-all duration-200 cursor-pointer
-                ${lang === l
-                  ? "bg-accent text-accent-foreground"
-                  : "bg-transparent text-foreground-muted hover:text-foreground"
-                }`}
-            >
+          {(["pt", "en"] as const).map((l) =>
+          <button
+            key={l}
+            onClick={() => setLang(l)}
+            className={`px-3 py-1.5 rounded text-[0.65rem] tracking-[0.18em] uppercase transition-all duration-200 cursor-pointer
+                ${lang === l ?
+            "bg-accent text-accent-foreground" :
+            "bg-transparent text-foreground-muted hover:text-foreground"}`
+            }>
+            
               {l.toUpperCase()}
             </button>
-          ))}
+          )}
         </div>
       </div>
-    </header>
-  );
+    </header>);
+
 }
