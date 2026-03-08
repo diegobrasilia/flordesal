@@ -23,6 +23,17 @@
 
   <body>
     <div id="root"></div>
+    <!-- iOS Safari viewport height fix: runs before React -->
+    <script>
+      function setAppHeight() {
+        document.documentElement.style.setProperty('--app-height', window.innerHeight + 'px');
+      }
+      setAppHeight();
+      window.addEventListener('resize', setAppHeight);
+      window.addEventListener('orientationchange', function() {
+        setTimeout(setAppHeight, 200);
+      });
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
