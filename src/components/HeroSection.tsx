@@ -45,12 +45,20 @@ export function HeroSection() {
             "Seasonal produce, inspirations from Trás-os-Montes and the Portuguese coast, in a warm setting overlooking Mirandela. Good food. Good wine. Good people."
           )}
         </p>
-        <a
-          href="#contact"
-          className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-accent text-accent-foreground text-[0.8rem] tracking-[0.2em] uppercase font-medium transition-all duration-300 hover:bg-accent-hover hover:-translate-y-0.5 animate-fade-in-up [animation-delay:0.3s] [animation-fill-mode:both]"
-        >
-          {t("Reservar mesa", "Book a table")}
-        </a>
+        <div className="flex flex-wrap gap-3 animate-fade-in-up [animation-delay:0.3s] [animation-fill-mode:both]">
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-accent text-accent-foreground text-[0.8rem] tracking-[0.2em] uppercase font-medium transition-all duration-300 hover:bg-accent-hover hover:-translate-y-0.5"
+          >
+            {t("Reservar mesa", "Book a table")}
+          </a>
+          <a
+            href="#menu"
+            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-white/25 text-foreground text-[0.8rem] tracking-[0.2em] uppercase font-medium transition-all duration-300 hover:border-accent hover:text-accent hover:-translate-y-0.5"
+          >
+            Menu
+          </a>
+        </div>
       </div>
     </section>
   );
