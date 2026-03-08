@@ -5,7 +5,7 @@ export function SiteHeader() {
 
   const navLinks = [
     { href: "#accueil", label: t("Início", "Home") },
-    { href: "#menu", label: t("Ementa", "Menu") },
+    { href: "#menu", label: "Menu" },
     { href: "#apropos", label: t("Sobre", "About") },
     { href: "#reviews", label: t("Avaliações", "Reviews") },
     { href: "#contact", label: t("Reservas", "Reservations") },
