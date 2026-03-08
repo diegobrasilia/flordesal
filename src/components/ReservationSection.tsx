@@ -91,54 +91,31 @@ export function ReservationSection() {
               {/* Name */}
               <div>
                 <label className={labelClass}>{t("Nome completo", "Full name")}</label>
-                <input
-                  type="text"
-                  required
-                  placeholder={t("O seu nome", "Your name")}
-                  className={inputClass}
-                />
+                <input ref={nameRef} type="text" required placeholder={t("O seu nome", "Your name")} className={inputClass} />
               </div>
 
               {/* Email */}
               <div>
                 <label className={labelClass}>{t("Endereço de e-mail", "Email address")}</label>
-                <input
-                  type="email"
-                  required
-                  placeholder={t("voce@example.com", "you@example.com")}
-                  className={inputClass}
-                />
+                <input ref={emailRef} type="email" required placeholder={t("voce@example.com", "you@example.com")} className={inputClass} />
               </div>
 
               {/* Date + Time */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className={labelClass}>{t("Data", "Date")}</label>
-                  <input
-                    type="date"
-                    required
-                    className={inputClass}
-                  />
+                  <input ref={dateRef} type="date" required className={inputClass} />
                 </div>
                 <div>
                   <label className={labelClass}>{t("Hora", "Time")}</label>
-                  <input
-                    type="time"
-                    required
-                    className={inputClass}
-                  />
+                  <input ref={timeRef} type="time" required className={inputClass} />
                 </div>
               </div>
 
               {/* Guests */}
               <div>
                 <label className={labelClass}>{t("Nº de pessoas", "Number of guests")}</label>
-                <input
-                  type="number"
-                  min={1}
-                  placeholder={t("Nº de pessoas", "Number of guests")}
-                  className={inputClass}
-                />
+                <input ref={guestsRef} type="number" min={1} placeholder={t("Nº de pessoas", "Number of guests")} className={inputClass} />
               </div>
 
               {/* Message */}
@@ -146,19 +123,19 @@ export function ReservationSection() {
                 <label className={labelClass}>
                   {t("Mensagem (alergias, pedidos especiais…)", "Message (allergies, special requests…)")}
                 </label>
-                <textarea
-                  rows={4}
-                  placeholder={t("A sua mensagem", "Your message")}
-                  className={`${inputClass} rounded-xl resize-y`}
-                />
+                <textarea ref={messageRef} rows={4} placeholder={t("A sua mensagem", "Your message")} className={`${inputClass} rounded-xl resize-y`} />
               </div>
+
+              {error && <p className="text-red-400 text-[0.82rem]">{error}</p>}
 
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-accent text-accent-foreground text-[0.85rem] tracking-[0.18em] uppercase font-medium transition-all duration-200 hover:bg-accent-hover hover:-translate-y-0.5 cursor-pointer border-0 mt-1"
+                disabled={loading}
+                className="w-full inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-accent text-accent-foreground text-[0.85rem] tracking-[0.18em] uppercase font-medium transition-all duration-200 hover:bg-accent-hover hover:-translate-y-0.5 cursor-pointer border-0 mt-1 disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {t("Enviar pedido", "Send request")}
+                {loading ? t("A enviar…", "Sending…") : t("Enviar pedido", "Send request")}
               </button>
+
 
               <p className="text-[0.78rem] text-foreground/35 pt-1">
                 {t(
