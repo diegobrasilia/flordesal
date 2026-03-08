@@ -1,3 +1,4 @@
+import logo from "@/assets/logo.png";
 import { useLang } from "@/contexts/LangContext";
 
 export function SiteHeader() {
