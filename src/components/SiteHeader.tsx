@@ -1,8 +1,10 @@
+import { useState } from "react";
 import logo from "@/assets/logo.png";
 import { useLang } from "@/contexts/LangContext";
 
 export function SiteHeader() {
   const { lang, setLang, t } = useLang();
+  const [lightbox, setLightbox] = useState(false);
 
   const navLinks = [
   { href: "#accueil", label: t("Início", "Home") },
@@ -14,6 +16,7 @@ export function SiteHeader() {
 
 
   return (
+    <>
     <header
       className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.05]"
       style={{
@@ -23,11 +26,11 @@ export function SiteHeader() {
       
       <div className="mx-auto max-w-[1100px] px-6 flex items-center justify-between gap-4 py-5 text-primary-foreground">
         {/* Logo */}
-        <a href="#accueil" className="flex items-center gap-3">
+        <a href="#accueil" className="flex items-center gap-3" onClick={(e) => { e.preventDefault(); setLightbox(true); }}>
           <img
             src={logo}
             alt="Flor de Sal"
-            className="h-9 w-9 rounded-full object-cover" />
+            className="h-9 w-9 rounded-full object-cover cursor-pointer" />
           
           <span className="font-title text-[1.1rem] tracking-[0.15em] text-foreground">
             Flor de Sal
@@ -64,6 +67,28 @@ export function SiteHeader() {
           )}
         </div>
       </div>
-    </header>);
+    </header>
+
+    {/* Lightbox */}
+    {lightbox && (
+      <div
+        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+        onClick={() => setLightbox(false)}
+      >
+        <img
+          src={logo}
+          alt="Flor de Sal"
+          className="max-h-[80vh] max-w-[80vw] rounded-2xl shadow-2xl object-contain"
+          onClick={(e) => e.stopPropagation()}
+        />
+        <button
+          onClick={() => setLightbox(false)}
+          className="absolute top-6 right-8 text-white/70 hover:text-white text-3xl font-light leading-none cursor-pointer bg-transparent border-0"
+        >
+          ×
+        </button>
+      </div>
+    )}
+    </>);
 
 }
