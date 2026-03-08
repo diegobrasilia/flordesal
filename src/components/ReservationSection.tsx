@@ -177,7 +177,7 @@ export function ReservationSection() {
         </div>
 
         {/* Contact info */}
-        <div className="border-l border-white/[0.06] pl-10">
+        <div className="md:border-l md:border-white/[0.06] md:pl-10">
           <p className="text-[0.72rem] tracking-[0.3em] uppercase text-accent mb-5">
             {t("Onde estamos", "Find us")}
           </p>
