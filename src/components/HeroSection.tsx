@@ -1,14 +1,23 @@
+import { useEffect, useState } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
 import { useLang } from "@/contexts/LangContext";
 
 export function HeroSection() {
   const { t } = useLang();
+  const [heroHeight, setHeroHeight] = useState("100svh");
+
+  useEffect(() => {
+    const update = () => setHeroHeight(`${window.innerHeight}px`);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   return (
     <section
       id="accueil"
       className="relative flex items-center text-foreground overflow-hidden"
-      style={{ paddingTop: "90px", minHeight: "100svh" }}
+      style={{ paddingTop: "90px", minHeight: heroHeight }}
     >
       {/* Background image */}
       <div
