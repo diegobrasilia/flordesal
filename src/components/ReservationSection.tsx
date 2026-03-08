@@ -126,7 +126,7 @@ export function ReservationSection() {
                 <textarea ref={messageRef} rows={4} placeholder={t("A sua mensagem", "Your message")} className={`${inputClass} rounded-xl resize-y`} />
               </div>
 
-              {error && <p className="text-red-400 text-[0.82rem]">{error}</p>}
+              {error && <p className="text-destructive text-[0.82rem]">{error}</p>}
 
               <button
                 type="submit"
