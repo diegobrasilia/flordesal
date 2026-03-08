@@ -2,6 +2,7 @@ import { LangProvider } from "@/contexts/LangContext";
 import { SiteHeader } from "@/components/SiteHeader";
 import { HeroSection } from "@/components/HeroSection";
 import { MenuSection } from "@/components/MenuSection";
+import { WineSection } from "@/components/WineSection";
 import { AboutSection } from "@/components/AboutSection";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { ReservationSection } from "@/components/ReservationSection";
@@ -14,6 +15,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <MenuSection />
+        <WineSection />
         <AboutSection />
         <ReviewsSection />
         <ReservationSection />
