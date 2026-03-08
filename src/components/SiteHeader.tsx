@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "@/assets/logo.png";
 import { useLang } from "@/contexts/LangContext";
 
 export function SiteHeader() {
   const { lang, setLang, t } = useLang();
   const [lightbox, setLightbox] = useState(false);
+  const [atTop, setAtTop] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => setAtTop(window.scrollY < 80);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const navLinks = [
   { href: "#accueil", label: t("Início", "Home") },
@@ -13,7 +20,6 @@ export function SiteHeader() {
   { href: "#apropos", label: t("Sobre", "About") },
   { href: "#reviews", label: t("Avaliações", "Reviews") },
   { href: "#contact", label: t("Reservas", "Reservations") }];
-
 
   return (
     <>
@@ -26,16 +32,17 @@ export function SiteHeader() {
       
       <div className="mx-auto max-w-[1100px] px-6 flex items-center justify-between gap-4 py-5 text-primary-foreground">
         {/* Logo */}
-        <a href="#accueil" className="flex items-center gap-3" onClick={(e) => { e.preventDefault(); setLightbox(true); }}>
+        <div className="flex items-center gap-3">
           <img
             src={logo}
             alt="Flor de Sal"
-            className="h-9 w-9 rounded-full object-cover cursor-pointer" />
-          
-          <span className="font-title text-[1.1rem] tracking-[0.15em] text-foreground">
+            className="h-9 w-9 rounded-full object-cover cursor-pointer"
+            onClick={() => atTop ? setLightbox(true) : window.location.hash = "#accueil"}
+          />
+          <a href="#accueil" className="font-title text-[1.1rem] tracking-[0.15em] text-foreground">
             Flor de Sal
-          </span>
-        </a>
+          </a>
+        </div>
 
         {/* Nav */}
         <nav className="hidden md:flex items-center">
@@ -44,7 +51,6 @@ export function SiteHeader() {
             key={link.href}
             href={link.href}
             className="ml-7 text-[0.72rem] tracking-[0.18em] uppercase text-foreground-muted pb-0.5 border-b border-transparent transition-all duration-200 hover:border-accent text-secondary">
-            
               {link.label}
             </a>
           )}
@@ -61,7 +67,6 @@ export function SiteHeader() {
             "bg-accent text-accent-foreground" :
             "bg-transparent text-foreground-muted hover:text-foreground"}`
             }>
-            
               {l.toUpperCase()}
             </button>
           )}
@@ -90,5 +95,6 @@ export function SiteHeader() {
       </div>
     )}
     </>);
+}
 
 }
