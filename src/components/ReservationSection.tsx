@@ -126,15 +126,13 @@ export function ReservationSection() {
                       </button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0 z-[200]" align="start">
-                      <Calendar
+                       <Calendar
                         mode="single"
                         selected={selectedDate}
                         onSelect={setSelectedDate}
                         disabled={(date) => date < new Date(new Date().setHours(0, 0, 0, 0))}
                         initialFocus
-                        className="w-auto p-0 z-[200]"
-                        align="start"
-                        #className={cn("p-3 pointer-events-auto")}
+                        className={cn("p-3 pointer-events-auto")}
                       />
                     </PopoverContent>
                   </Popover>
