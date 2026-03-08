@@ -81,7 +81,7 @@ export function WineSection() {
   const { t } = useLang();
 
   return (
-    <section id="vinhos" className="py-24 bg-background-light border-t border-foreground-dark/[0.05]">
+    <section id="vinhos" className="py-24 bg-background-light">
       <div className="mx-auto max-w-[1100px] px-6">
         <p className="text-[0.72rem] tracking-[0.3em] uppercase text-accent mb-2">
           {t("Carta de vinhos", "Wine list")}
@@ -90,8 +90,11 @@ export function WineSection() {
           {t("Vinhos", "Wines")}
         </h2>
         <p className="text-foreground-dark-muted text-[0.9rem] mb-10 max-w-[36rem]">
-
-...
+          {t(
+            "Uma seleção cuidada de vinhos portugueses, com destaque para os produtores do Douro e de Trás-os-Montes.",
+            "A curated selection of Portuguese wines, with a focus on Douro and Trás-os-Montes producers."
+          )}
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
           {Object.values(wineData).map((col) => (
