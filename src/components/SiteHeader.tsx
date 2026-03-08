@@ -22,13 +22,15 @@ export function SiteHeader() {
     >
       <div className="mx-auto max-w-[1100px] px-6 flex items-center justify-between gap-4 py-5">
         {/* Logo */}
-        <a href="#accueil">
+        <a href="#accueil" className="flex items-center gap-3">
           <img
             src={logo}
             alt="Flor de Sal"
-            className="h-10 w-auto rounded-md"
-            style={{ mixBlendMode: "luminosity", opacity: 0.92 }}
+            className="h-9 w-9 rounded-full object-cover"
           />
+          <span className="font-title text-[1.1rem] tracking-[0.15em] text-foreground">
+            Flor de Sal
+          </span>
         </a>
 
         {/* Nav */}
