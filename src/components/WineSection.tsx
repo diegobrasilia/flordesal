@@ -86,28 +86,25 @@ export function WineSection() {
         <p className="text-[0.72rem] tracking-[0.3em] uppercase text-accent mb-2">
           {t("Carta de vinhos", "Wine list")}
         </p>
-        <h2 className="font-title text-[2rem] mb-2 tracking-[-0.01em]">
+        <h2 className="font-title text-[2rem] mb-2 tracking-[-0.01em] text-foreground-dark">
           {t("Vinhos", "Wines")}
         </h2>
-        <p className="text-foreground-muted text-[0.9rem] mb-10 max-w-[36rem]">
-          {t(
-            "Uma seleção cuidada de vinhos portugueses, com destaque para os produtores do Douro e de Trás-os-Montes.",
-            "A curated selection of Portuguese wines, with a focus on Douro and Trás-os-Montes producers."
-          )}
-        </p>
+        <p className="text-foreground-dark-muted text-[0.9rem] mb-10 max-w-[36rem]">
+
+...
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
           {Object.values(wineData).map((col) => (
             <div key={col.title.pt}>
-              <h3 className="text-[0.72rem] tracking-[0.25em] uppercase text-accent mt-0 mb-4 pb-2 border-b border-white/10">
+              <h3 className="font-title text-[1.4rem] tracking-[-0.01em] text-foreground-dark mt-0 mb-4 pb-2 border-b border-foreground-dark/10">
                 {col.title.pt}
               </h3>
               {col.items.map((item) => (
                 <div
                   key={item.name}
-                  className="flex justify-between items-center py-2.5 border-b border-white/[0.05] last:border-0"
+                  className="flex justify-between items-center py-2.5 border-b border-foreground-dark/[0.06] last:border-0"
                 >
-                  <span className="text-[0.88rem] text-foreground/80 pr-3">{item.name}</span>
+                  <span className="text-[0.88rem] text-foreground-dark/80 pr-3">{item.name}</span>
                   <span className="text-[0.85rem] text-accent shrink-0">{item.price}</span>
                 </div>
               ))}
@@ -115,7 +112,7 @@ export function WineSection() {
           ))}
         </div>
 
-        <p className="mt-10 text-[0.78rem] text-foreground-muted/50 border-t border-white/[0.06] pt-5">
+        <p className="mt-10 text-[0.78rem] text-foreground-dark-muted border-t border-foreground-dark/[0.07] pt-5">
           {t(
             "Preços incluem IVA. Carta sujeita a disponibilidade de stock.",
             "Prices include VAT. Wine list subject to stock availability."
