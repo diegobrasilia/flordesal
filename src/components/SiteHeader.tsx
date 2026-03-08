@@ -21,7 +21,7 @@ export function SiteHeader() {
         background: "hsl(0 0% 4% / 0.88)"
       }}>
       
-      <div className="mx-auto max-w-[1100px] px-6 flex items-center justify-between gap-4 py-5">
+      <div className="mx-auto max-w-[1100px] px-6 flex items-center justify-between gap-4 py-5 text-primary-foreground">
         {/* Logo */}
         <a href="#accueil" className="flex items-center gap-3">
           <img
