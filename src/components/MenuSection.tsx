@@ -208,6 +208,7 @@ export function MenuSection() {
           </div>
         </div>
 
+        <div id="vinhos" className="scroll-mt-20" />
         <p className="mt-8 text-[0.78rem] text-foreground-dark-muted border-t border-foreground-dark/[0.07] pt-5">
           {t(
             "Os preços incluem IVA à taxa legal em vigor. Menu sujeito a alterações sazonais.",
