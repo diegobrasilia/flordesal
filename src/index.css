@@ -7,6 +7,7 @@
 @layer base {
   :root {
     /* === Flor de Sal Design System — Chic & Modern === */
+    --app-height: 100svh; /* overridden by JS for iOS Safari */
 
     /* Dark backgrounds — pure, ink-black tones */
     --background: 0 0% 4%;           /* #0a0a0a */
