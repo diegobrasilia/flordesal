@@ -37,7 +37,7 @@ export function SiteHeader() {
             src={logo}
             alt="Flor de Sal"
             className="h-9 w-9 rounded-full object-cover cursor-pointer"
-            onClick={() => atTop ? setLightbox(true) : window.location.hash = "#accueil"}
+            onClick={() => atTop ? setLightbox(true) : document.getElementById("accueil")?.scrollIntoView({ behavior: "smooth" })}
           />
           <a href="#accueil" className="font-title text-[1.1rem] tracking-[0.15em] text-foreground">
             Flor de Sal
