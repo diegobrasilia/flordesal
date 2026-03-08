@@ -1,3 +1,4 @@
+import heroBg from "@/assets/hero-bg.jpg";
 import { useLang } from "@/contexts/LangContext";
 
 export function HeroSection() {
@@ -6,17 +7,28 @@ export function HeroSection() {
   return (
     <section
       id="accueil"
-      className="relative min-h-screen flex items-center text-foreground"
-      style={{
-        background: "hsl(var(--background))",
-        paddingTop: "90px",
-      }}
+      className="relative min-h-screen flex items-center text-foreground overflow-hidden"
+      style={{ paddingTop: "90px" }}
     >
-      {/* Subtle top glow */}
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
+
+      {/* Dark overlay — preserve readability */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(105deg, hsl(0 0% 3% / 0.88) 0%, hsl(0 0% 3% / 0.65) 55%, hsl(0 0% 3% / 0.45) 100%)",
+        }}
+      />
+
+      {/* Subtle gold glow */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          background: "radial-gradient(ellipse 60% 40% at 20% 30%, hsl(38 38% 54% / 0.08), transparent 70%)",
+          background: "radial-gradient(ellipse 50% 60% at 15% 60%, hsl(38 38% 54% / 0.07), transparent 70%)",
         }}
       />
 
