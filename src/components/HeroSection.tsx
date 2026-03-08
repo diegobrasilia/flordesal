@@ -8,21 +8,26 @@ export function HeroSection() {
       id="accueil"
       className="relative min-h-screen flex items-center text-foreground"
       style={{
-        backgroundImage: `
-          radial-gradient(circle at top, rgba(201,166,107,0.18), transparent 55%),
-          linear-gradient(to bottom, rgba(5,6,8,0.98), rgba(5,6,8,1))
-        `,
+        background: "hsl(var(--background))",
         paddingTop: "90px",
       }}
     >
-      <div className="mx-auto max-w-[1100px] px-6 py-14 md:py-20 max-w-2xl">
-        <p className="text-accent text-[0.8rem] tracking-[0.3em] uppercase mb-4 animate-fade-in-up">
+      {/* Subtle top glow */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse 60% 40% at 20% 30%, hsl(38 38% 54% / 0.08), transparent 70%)",
+        }}
+      />
+
+      <div className="relative mx-auto max-w-[1100px] px-6 py-14 md:py-20 max-w-2xl">
+        <p className="text-accent text-[0.72rem] tracking-[0.35em] uppercase mb-5 animate-fade-in-up">
           {t("Restaurante · Esplanada · Bar", "Restaurant · Terrace · Bar")}
         </p>
-        <h1 className="font-title text-[clamp(2.4rem,4vw,3.4rem)] leading-[1.1] mb-5 animate-fade-in-up [animation-delay:0.1s] [animation-fill-mode:both]">
+        <h1 className="font-title text-[clamp(2.6rem,4.5vw,3.8rem)] leading-[1.08] mb-6 animate-fade-in-up [animation-delay:0.1s] [animation-fill-mode:both] tracking-[-0.01em]">
           {t("Um lugar para desfrutar Mirandela", "A place to enjoy Mirandela")}
         </h1>
-        <p className="text-foreground-muted max-w-[34rem] mb-8 animate-fade-in-up [animation-delay:0.2s] [animation-fill-mode:both]">
+        <p className="text-foreground-muted max-w-[34rem] mb-10 text-[0.95rem] leading-relaxed animate-fade-in-up [animation-delay:0.2s] [animation-fill-mode:both]">
           {t(
             "Produtos sazonais, inspirações de Trás-os-Montes e da costa portuguesa, num ambiente acolhedor com vista sobre Mirandela. Boa comida. Bom vinho. Boas pessoas.",
             "Seasonal produce, inspirations from Trás-os-Montes and the Portuguese coast, in a warm setting overlooking Mirandela. Good food. Good wine. Good people."
@@ -30,7 +35,7 @@ export function HeroSection() {
         </p>
         <a
           href="#contact"
-          className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-accent text-accent-foreground text-[0.9rem] tracking-[0.15em] uppercase font-medium transition-all duration-200 hover:bg-accent-hover hover:-translate-y-0.5 animate-fade-in-up [animation-delay:0.3s] [animation-fill-mode:both]"
+          className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-accent text-accent-foreground text-[0.8rem] tracking-[0.2em] uppercase font-medium transition-all duration-300 hover:bg-accent-hover hover:-translate-y-0.5 animate-fade-in-up [animation-delay:0.3s] [animation-fill-mode:both]"
         >
           {t("Reservar mesa", "Book a table")}
         </a>

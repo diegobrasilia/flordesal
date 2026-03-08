@@ -13,12 +13,21 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        title: ["Playfair Display", "serif"],
+        body: ["Inter", "system-ui", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        "background-darker": "hsl(var(--background-darker))",
+        "background-light": "hsl(var(--background-light))",
+        "foreground-muted": "hsl(var(--foreground-muted))",
+        "foreground-dark": "hsl(var(--foreground-dark))",
+        "foreground-dark-muted": "hsl(var(--foreground-dark-muted))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

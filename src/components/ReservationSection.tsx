@@ -11,7 +11,7 @@ export function ReservationSection() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background text-foreground">
+    <section id="contact" className="py-24 bg-background text-foreground border-t border-white/[0.04]">
       <div className="mx-auto max-w-[1100px] px-6 grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-10">
         {/* Form */}
         <div>
