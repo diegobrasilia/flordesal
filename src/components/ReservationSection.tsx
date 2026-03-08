@@ -147,7 +147,7 @@ export function ReservationSection() {
 
           <div className="rounded-xl overflow-hidden border border-white/15 mb-6">
             <iframe
-              src="https://www.google.com/maps?q=41.48622215845754,-7.186533015605368&z=19&output=embed"
+              src="https://www.google.com/maps?q=41.4861859,-7.1863967&z=17&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
