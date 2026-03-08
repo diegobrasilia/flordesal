@@ -1,6 +1,11 @@
 import { useState, FormEvent, useRef } from "react";
+import { format } from "date-fns";
+import { CalendarIcon } from "lucide-react";
 import { useLang } from "@/contexts/LangContext";
 import { supabase } from "@/integrations/supabase/client";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
 
 const inputClass =
   "w-full px-4 py-2.5 rounded-lg border border-white/20 bg-white/10 text-foreground text-[0.9rem] outline-none transition-all placeholder:text-foreground-muted focus:border-accent focus:bg-white/15 focus:shadow-[0_0_0_2px_hsl(38_38%_54%_/_0.25)] font-body";
@@ -13,10 +18,10 @@ export function ReservationSection() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>();
 
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
-  const dateRef = useRef<HTMLInputElement>(null);
   const timeRef = useRef<HTMLInputElement>(null);
   const guestsRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
@@ -31,7 +36,7 @@ export function ReservationSection() {
         body: {
           name: nameRef.current?.value,
           email: emailRef.current?.value,
-          date: dateRef.current?.value,
+          date: selectedDate ? format(selectedDate, "dd/MM/yyyy") : "",
           time: timeRef.current?.value,
           guests: guestsRef.current?.value || null,
           message: messageRef.current?.value || null,
@@ -104,7 +109,31 @@ export function ReservationSection() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className={labelClass}>{t("Data", "Date")}</label>
-                  <input ref={dateRef} type="date" required className={inputClass} />
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <button
+                        type="button"
+                        className={cn(
+                          inputClass,
+                          "flex items-center justify-between cursor-pointer",
+                          !selectedDate && "text-foreground-muted"
+                        )}
+                      >
+                        {selectedDate ? format(selectedDate, "dd/MM/yyyy") : t("Escolha uma data", "Pick a date")}
+                        <CalendarIcon className="h-4 w-4 opacity-50 shrink-0" />
+                      </button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-auto p-0 z-[200]" align="start">
+                      <Calendar
+                        mode="single"
+                        selected={selectedDate}
+                        onSelect={setSelectedDate}
+                        disabled={(date) => date < new Date(new Date().setHours(0,0,0,0))}
+                        initialFocus
+                        className={cn("p-3 pointer-events-auto")}
+                      />
+                    </PopoverContent>
+                  </Popover>
                 </div>
                 <div>
                   <label className={labelClass}>{t("Hora", "Time")}</label>
