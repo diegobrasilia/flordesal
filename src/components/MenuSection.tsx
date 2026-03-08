@@ -55,45 +55,20 @@ export function MenuSection() {
     <section id="menu" className="py-24 bg-background-light">
       <div className="mx-auto max-w-[1100px] px-6">
         <p className="text-[0.72rem] tracking-[0.3em] uppercase text-accent mb-2">
-          {t("Ementa sazonal", "Seasonal menu")}
+          {t("Menu sazonal", "Seasonal menu")}
         </p>
         <h2 className="font-title text-[2rem] text-foreground-dark mb-2">
-          {t("Ementa", "Menu")}
+          Menu
         </h2>
         <p className="text-foreground-dark-muted max-w-[36rem] mt-0 mb-0 text-[0.9rem]">
           {t(
-            "Ementa curta e sazonal, inspirada no terroir português e nos sabores mediterrânicos.",
+            "Menu curto e sazonal, inspirado no terroir português e nos sabores mediterrânicos.",
             "A short, seasonal menu inspired by Portuguese terroir and Mediterranean flavours."
           )}
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-          {Object.values(menuData).map((col) => (
-            <div key={col.title.pt}>
-              <h3 className="font-title text-[1rem] tracking-[0.16em] uppercase text-foreground-dark mt-0 mb-4 pb-2 border-b border-foreground-dark/10">
-                {lang === "pt" ? col.title.pt : col.title.en}
-              </h3>
-              {col.items.map((item) => (
-                <div
-                  key={item.name.pt}
-                  className="py-4 border-b border-foreground-dark/[0.07] last:border-0"
-                >
-                  <div className="flex justify-between text-[0.92rem] font-medium text-foreground-dark mb-1">
-                    <span>{lang === "pt" ? item.name.pt : item.name.en}</span>
-                    <span className="text-accent ml-4 shrink-0 font-normal">{item.price}</span>
-                  </div>
-                  <p className="text-[0.85rem] mt-0 mb-0 text-foreground-dark-muted leading-relaxed">
-                    {lang === "pt" ? item.desc.pt : item.desc.en}
-                  </p>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-
+...
         <p className="mt-8 text-[0.82rem] text-foreground-dark-muted border-t border-foreground-dark/[0.07] pt-5">
           {t(
-            "Ementa apresentada a título de exemplo. Contacte-nos para conhecer os pratos e sugestões do momento.",
+            "Menu apresentado a título de exemplo. Contacte-nos para conhecer os pratos e sugestões do momento.",
             "Menu shown as an example only. Please contact us to know the current dishes and specials."
           )}
         </p>
