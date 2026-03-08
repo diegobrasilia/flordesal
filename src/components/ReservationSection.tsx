@@ -1,5 +1,6 @@
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, useRef } from "react";
 import { useLang } from "@/contexts/LangContext";
+import { supabase } from "@/integrations/supabase/client";
 
 const inputClass =
   "w-full px-4 py-2.5 rounded-lg border border-white/20 bg-white/10 text-foreground text-[0.9rem] outline-none transition-all placeholder:text-foreground-muted focus:border-accent focus:bg-white/15 focus:shadow-[0_0_0_2px_hsl(38_38%_54%_/_0.25)] font-body";
@@ -10,11 +11,43 @@ const labelClass =
 export function ReservationSection() {
   const { t } = useLang();
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: FormEvent) => {
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const dateRef = useRef<HTMLInputElement>(null);
+  const timeRef = useRef<HTMLInputElement>(null);
+  const guestsRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+
+    try {
+      const { error: fnError } = await supabase.functions.invoke("send-reservation", {
+        body: {
+          name: nameRef.current?.value,
+          email: emailRef.current?.value,
+          date: dateRef.current?.value,
+          time: timeRef.current?.value,
+          guests: guestsRef.current?.value || null,
+          message: messageRef.current?.value || null,
+        },
+      });
+
+      if (fnError) throw fnError;
+      setSubmitted(true);
+    } catch (err) {
+      console.error(err);
+      setError(t("Erro ao enviar. Tente novamente.", "Error sending. Please try again."));
+    } finally {
+      setLoading(false);
+    }
   };
+
 
   return (
     <section id="contact" className="py-24 bg-background text-foreground border-t border-white/[0.06]">
