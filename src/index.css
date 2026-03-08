@@ -119,6 +119,12 @@
   box-sizing: border-box;
 }
 
+/* iOS Safari full-height hero fix */
+.hero-full-height {
+  min-height: 100svh; /* fallback */
+  min-height: var(--app-height, 100svh);
+}
+
 /* Hero fade-in-up animation */
 @keyframes fade-in-up-kf {
   from { opacity: 0; transform: translateY(24px); }
