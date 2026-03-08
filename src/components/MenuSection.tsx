@@ -170,7 +170,7 @@ export function MenuSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
           {Object.values(menuData).map((col) => (
             <div key={col.title.pt}>
-              <h3 className="font-title text-[1rem] tracking-[0.16em] uppercase text-foreground-dark mt-0 mb-4 pb-2 border-b border-foreground-dark/10">
+              <h3 className="font-title text-[1.4rem] tracking-[-0.01em] text-foreground-dark mt-0 mb-4 pb-2 border-b border-foreground-dark/10">
                 {lang === "pt" ? col.title.pt : col.title.en}
               </h3>
               {col.items.map((item) => (
@@ -195,7 +195,7 @@ export function MenuSection() {
 
         {/* Kids */}
         <div className="mt-10 pt-8 border-t border-foreground-dark/10">
-          <h3 className="font-title text-[1rem] tracking-[0.16em] uppercase text-foreground-dark mt-0 mb-4">
+          <h3 className="font-title text-[1.4rem] tracking-[-0.01em] text-foreground-dark mt-0 mb-4">
             Kids
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12">
