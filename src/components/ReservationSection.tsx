@@ -10,8 +10,7 @@ import { cn } from "@/lib/utils";
 const inputClass =
   "w-full px-4 py-2.5 rounded-lg border border-white/20 bg-white/10 text-foreground text-[0.9rem] outline-none transition-all placeholder:text-foreground-muted focus:border-accent focus:bg-white/15 focus:shadow-[0_0_0_2px_hsl(38_38%_54%_/_0.25)] font-body";
 
-const labelClass =
-  "block text-[0.75rem] tracking-[0.18em] uppercase text-foreground/70 mb-1.5 font-medium";
+const labelClass = "block text-[0.75rem] tracking-[0.18em] uppercase text-foreground/70 mb-1.5 font-medium";
 
 export function ReservationSection() {
   const { t } = useLang();
@@ -53,31 +52,25 @@ export function ReservationSection() {
     }
   };
 
-
   return (
     <section id="contact" className="py-24 bg-background text-foreground border-t border-white/[0.06]">
       <div className="mx-auto max-w-[1100px] px-6 grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-14">
-
         {/* Form */}
         <div>
           <p className="text-[0.72rem] tracking-[0.3em] uppercase text-accent mb-2">
             {t("Reservar mesa", "Book a table")}
           </p>
-          <h2 className="font-title text-[2rem] mb-3 tracking-[-0.01em]">
-            {t("Reservas", "Reservations")}
-          </h2>
+          <h2 className="font-title text-[2rem] mb-3 tracking-[-0.01em]">{t("Reservas", "Reservations")}</h2>
           <p className="text-foreground/60 text-[0.9rem] mb-7 leading-relaxed">
             {t(
               "Para qualquer reserva ou pedido de evento privado no Flor de Sal, preencha o formulário abaixo. Entraremos em contacto o mais rapidamente possível.",
-              "For any booking or private event request at Flor de Sal, please fill in the form below. We will get back to you as soon as possible."
+              "For any booking or private event request at Flor de Sal, please fill in the form below. We will get back to you as soon as possible.",
             )}
           </p>
 
           {submitted ? (
             <div className="bg-white/[0.07] border border-white/20 rounded-2xl p-8 text-center">
-              <p className="text-[1.2rem] font-title text-foreground mb-2">
-                {t("Pedido enviado!", "Request sent!")}
-              </p>
+              <p className="text-[1.2rem] font-title text-foreground mb-2">{t("Pedido enviado!", "Request sent!")}</p>
               <p className="text-foreground/60 text-[0.9rem] mb-5">
                 {t("Entraremos em contacto brevemente.", "We will get back to you shortly.")}
               </p>
@@ -89,20 +82,29 @@ export function ReservationSection() {
               </button>
             </div>
           ) : (
-            <form
-              onSubmit={handleSubmit}
-              className="space-y-4"
-            >
+            <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name */}
               <div>
                 <label className={labelClass}>{t("Nome completo", "Full name")}</label>
-                <input ref={nameRef} type="text" required placeholder={t("O seu nome", "Your name")} className={inputClass} />
+                <input
+                  ref={nameRef}
+                  type="text"
+                  required
+                  placeholder={t("O seu nome", "Your name")}
+                  className={inputClass}
+                />
               </div>
 
               {/* Email */}
               <div>
                 <label className={labelClass}>{t("Endereço de e-mail", "Email address")}</label>
-                <input ref={emailRef} type="email" required placeholder={t("voce@example.com", "you@example.com")} className={inputClass} />
+                <input
+                  ref={emailRef}
+                  type="email"
+                  required
+                  placeholder={t("voce@example.com", "you@example.com")}
+                  className={inputClass}
+                />
               </div>
 
               {/* Date + Time */}
@@ -116,7 +118,7 @@ export function ReservationSection() {
                         className={cn(
                           inputClass,
                           "flex items-center justify-between cursor-pointer",
-                          !selectedDate && "text-foreground-muted"
+                          !selectedDate && "text-foreground-muted",
                         )}
                       >
                         {selectedDate ? format(selectedDate, "dd/MM/yyyy") : t("Escolha", "Date")}
@@ -128,9 +130,11 @@ export function ReservationSection() {
                         mode="single"
                         selected={selectedDate}
                         onSelect={setSelectedDate}
-                        disabled={(date) => date < new Date(new Date().setHours(0,0,0,0))}
+                        disabled={(date) => date < new Date(new Date().setHours(0, 0, 0, 0))}
                         initialFocus
-                        className={cn("p-3 pointer-events-auto")}
+                        className="w-auto p-0 z-[200]"
+                        align="start"
+                        #className={cn("p-3 pointer-events-auto")}
                       />
                     </PopoverContent>
                   </Popover>
@@ -144,7 +148,13 @@ export function ReservationSection() {
               {/* Guests */}
               <div>
                 <label className={labelClass}>{t("Nº de pessoas", "Number of guests")}</label>
-                <input ref={guestsRef} type="number" min={1} placeholder={t("Nº de pessoas", "Number of guests")} className={inputClass} />
+                <input
+                  ref={guestsRef}
+                  type="number"
+                  min={1}
+                  placeholder={t("Nº de pessoas", "Number of guests")}
+                  className={inputClass}
+                />
               </div>
 
               {/* Message */}
@@ -152,7 +162,12 @@ export function ReservationSection() {
                 <label className={labelClass}>
                   {t("Mensagem (alergias, pedidos especiais…)", "Message (allergies, special requests…)")}
                 </label>
-                <textarea ref={messageRef} rows={4} placeholder={t("A sua mensagem", "Your message")} className={`${inputClass} rounded-xl resize-y`} />
+                <textarea
+                  ref={messageRef}
+                  rows={4}
+                  placeholder={t("A sua mensagem", "Your message")}
+                  className={`${inputClass} rounded-xl resize-y`}
+                />
               </div>
 
               {error && <p className="text-destructive text-[0.82rem]">{error}</p>}
@@ -165,11 +180,10 @@ export function ReservationSection() {
                 {loading ? t("A enviar…", "Sending…") : t("Enviar pedido", "Send request")}
               </button>
 
-
               <p className="text-[0.78rem] text-foreground/35 pt-1">
                 {t(
                   "Este formulário é um exemplo. Posteriormente poderá ser ligado a um sistema de reservas.",
-                  "This form is an example. It can later be connected to a booking system."
+                  "This form is an example. It can later be connected to a booking system.",
                 )}
               </p>
             </form>
@@ -178,9 +192,7 @@ export function ReservationSection() {
 
         {/* Contact info */}
         <div className="md:border-l md:border-white/[0.06] md:pl-10">
-          <p className="text-[0.72rem] tracking-[0.3em] uppercase text-accent mb-5">
-            {t("Onde estamos", "Find us")}
-          </p>
+          <p className="text-[0.72rem] tracking-[0.3em] uppercase text-accent mb-5">{t("Onde estamos", "Find us")}</p>
 
           <div className="rounded-xl overflow-hidden border border-white/15 mb-2">
             <iframe
@@ -209,9 +221,7 @@ export function ReservationSection() {
               </a>
             </li>
             <li>
-              <span className="block text-[0.7rem] tracking-[0.2em] uppercase text-foreground/40 mb-0.5">
-                E-mail
-              </span>
+              <span className="block text-[0.7rem] tracking-[0.2em] uppercase text-foreground/40 mb-0.5">E-mail</span>
               <a href="mailto:flordesalrestaurante2024@gmail.com" className="text-accent hover:underline break-all">
                 flordesalrestaurante2024@gmail.com
               </a>
@@ -220,11 +230,21 @@ export function ReservationSection() {
               <span className="block text-[0.7rem] tracking-[0.2em] uppercase text-foreground/40 mb-0.5">
                 {t("Redes sociais", "Social media")}
               </span>
-              <a href="https://www.instagram.com/restaurante.flordesal" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+              <a
+                href="https://www.instagram.com/restaurante.flordesal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:underline"
+              >
                 Instagram
               </a>
               <span className="text-foreground/30 mx-2">·</span>
-              <a href="https://www.facebook.com/flordesalrestaurante" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+              <a
+                href="https://www.facebook.com/flordesalrestaurante"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:underline"
+              >
                 Facebook
               </a>
             </li>
