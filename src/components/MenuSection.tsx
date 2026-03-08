@@ -1,52 +1,152 @@
 import { useLang } from "@/contexts/LangContext";
 
 const menuData = {
-  starters: {
+  entradas: {
     title: { pt: "Entradas", en: "Starters" },
     items: [
       {
-        name: { pt: "Tábua de enchidos de Trás-os-Montes", en: "Cured meats platter from Trás-os-Montes" },
-        desc: { pt: "Seleção de produtos locais, pão rústico morno e azeite da região.", en: "Selection of local products, warm country bread and regional olive oil." },
-        price: "18 €",
+        name: { pt: "Alheira grelhada com chouriço salgadas", en: "Grilled alheira with chouriço" },
+        desc: { pt: "", en: "" },
+        price: "7,00 €",
       },
       {
-        name: { pt: "Tempura de bacalhau", en: "Cod tempura" },
-        desc: { pt: "Pedaços de bacalhau crocantes, molho de alho e limão, salada de ervas frescas.", en: "Crispy cod pieces, lemon-garlic sauce and fresh herb salad." },
-        price: "16 €",
+        name: { pt: "Tábua de frios", en: "Charcuterie board" },
+        desc: { pt: "Com presunto de porco preto", en: "With black pork ham" },
+        price: "6,00 €",
+      },
+      {
+        name: { pt: "Bolinhos crocantes de pimento ao coco e molho de alho e salsinha", en: "Crispy pepper & coconut balls with garlic-parsley sauce" },
+        desc: { pt: "", en: "" },
+        price: "7,00 €",
+      },
+      {
+        name: { pt: "Salada mista", en: "Mixed salad" },
+        desc: { pt: "", en: "" },
+        price: "3,20 €",
+      },
+      {
+        name: { pt: "Salada de grão de carne com cebola caramelizada e vinagrete de mel", en: "Chickpea salad with caramelised onion and honey vinaigrette" },
+        desc: { pt: "", en: "" },
+        price: "4,30 €",
+      },
+      {
+        name: { pt: "Queijo cheese assado", en: "Baked cheese" },
+        desc: { pt: "", en: "" },
+        price: "3,50 €",
       },
     ],
   },
-  mains: {
-    title: { pt: "Pratos", en: "Mains" },
+  tradicoes: {
+    title: { pt: "Tradições de Mirandela", en: "Mirandela Traditions" },
     items: [
       {
-        name: { pt: "Bacalhau Flor de Sal", en: "Flor de Sal cod" },
-        desc: { pt: "Bacalhau confitado, creme de grão-de-bico, legumes grelhados e azeite aromático.", en: "Confit cod, chickpea cream, grilled vegetables and aromatic olive oil." },
-        price: "24 €",
+        name: { pt: "Alheira tradicional", en: "Traditional alheira" },
+        desc: { pt: "", en: "" },
+        price: "10,00 €",
       },
       {
-        name: { pt: "Porco preto grelhado", en: "Grilled porco preto" },
-        desc: { pt: "Cachaço de porco preto, batatas assadas e molho de vinho tinto do Douro.", en: "Black pork neck, roasted potatoes and Douro red wine sauce." },
-        price: "26 €",
+        name: { pt: "Alheira com presunto", en: "Alheira with ham" },
+        desc: { pt: "", en: "" },
+        price: "12,00 €",
+      },
+      {
+        name: { pt: "Almôndegas de aves", en: "Poultry meatballs" },
+        desc: { pt: "", en: "" },
+        price: "12,00 €",
+      },
+      {
+        name: { pt: "Alheira regular de caça", en: "Game alheira" },
+        desc: { pt: "", en: "" },
+        price: "12,00 €",
       },
     ],
   },
-  desserts: {
+  principal: {
+    title: { pt: "Prato Principal", en: "Main Course" },
+    items: [
+      {
+        name: { pt: "Secretos de porco preto à cebolada e ambarilhoa", en: "Black pork secreto with onion confit" },
+        desc: { pt: "", en: "" },
+        price: "26,00 €",
+      },
+      {
+        name: { pt: "Costeleta de vitela grelhada", en: "Grilled veal chop" },
+        desc: { pt: "", en: "" },
+        price: "27,00 €",
+      },
+      {
+        name: { pt: "Pasta fresca com camarinho a meio e ervas do jardim", en: "Fresh pasta with prawns and garden herbs" },
+        desc: { pt: "", en: "" },
+        price: "15,00 €",
+      },
+      {
+        name: { pt: "Risoto de tomate e cogumelo", en: "Tomato and mushroom risotto" },
+        desc: { pt: "", en: "" },
+        price: "13,00 €",
+      },
+      {
+        name: { pt: "Risoto de tomate e camarão", en: "Tomato and prawn risotto" },
+        desc: { pt: "", en: "" },
+        price: "13,00 €",
+      },
+      {
+        name: { pt: "Lombo de bacalhau à lagareiro de Braga", en: "Cod loin à lagareiro Braga style" },
+        desc: { pt: "", en: "" },
+        price: "28,00 €",
+      },
+      {
+        name: { pt: "Polvo assado em azeite com arroz de perno", en: "Roasted octopus in olive oil with rice" },
+        desc: { pt: "", en: "" },
+        price: "30,00 €",
+      },
+      {
+        name: { pt: "Panado grelhado", en: "Grilled breaded fillet" },
+        desc: { pt: "", en: "" },
+        price: "14,99 €",
+      },
+    ],
+  },
+  sobremesas: {
     title: { pt: "Sobremesas", en: "Desserts" },
     items: [
       {
-        name: { pt: "Pastel de nata reinventado", en: "Reinvented pastel de nata" },
-        desc: { pt: "Creme leve de baunilha, telha crocante e raspas de laranja.", en: "Light vanilla cream, crispy tuile and orange zest." },
-        price: "8 €",
+        name: { pt: "Rabanada transmontana", en: "Transmontana French toast" },
+        desc: { pt: "", en: "" },
+        price: "5,00 €",
       },
       {
-        name: { pt: "Domo de chocolate & flor de sal", en: "Chocolate & fleur de sel dome" },
-        desc: { pt: "Ganache intensa, biscuit de amêndoa e toque de flor de sal do Algarve.", en: "Rich ganache, almond biscuit and a touch of Algarve fleur de sel." },
-        price: "9 €",
+        name: { pt: "Petit gâteau de chocolate", en: "Chocolate lava cake" },
+        desc: { pt: "", en: "" },
+        price: "5,00 €",
+      },
+      {
+        name: { pt: "Panacotta", en: "Panna cotta" },
+        desc: { pt: "", en: "" },
+        price: "5,00 €",
+      },
+      {
+        name: { pt: "Corte de frutas da época", en: "Seasonal fruit platter" },
+        desc: { pt: "", en: "" },
+        price: "2,50 €",
+      },
+      {
+        name: { pt: "Pêra bêbada", en: "Drunken pear" },
+        desc: { pt: "", en: "" },
+        price: "5,00 €",
+      },
+      {
+        name: { pt: "Sobremesa do dia", en: "Dessert of the day" },
+        desc: { pt: "Pergunte ao seu servidor", en: "Ask your server" },
+        price: "6,00 €",
       },
     ],
   },
 };
+
+const kidsMenu = [
+  { name: { pt: "Brindão d'fela", en: "Veal fillet kids" }, price: "8,50 €" },
+  { name: { pt: "Brindão frango", en: "Chicken fillet kids" }, price: "8,00 €" },
+];
 
 export function MenuSection() {
   const { lang, t } = useLang();
@@ -60,14 +160,14 @@ export function MenuSection() {
         <h2 className="font-title text-[2rem] text-foreground-dark mb-2">
           Menu
         </h2>
-        <p className="text-foreground-dark-muted max-w-[36rem] mt-0 mb-0 text-[0.9rem]">
+        <p className="text-foreground-dark-muted max-w-[36rem] mt-0 mb-10 text-[0.9rem]">
           {t(
-            "Menu curto e sazonal, inspirado no terroir português e nos sabores mediterrânicos.",
-            "A short, seasonal menu inspired by Portuguese terroir and Mediterranean flavours."
+            "Menu sazonal inspirado no terroir português e nas tradições de Trás-os-Montes.",
+            "Seasonal menu inspired by Portuguese terroir and Trás-os-Montes traditions."
           )}
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
           {Object.values(menuData).map((col) => (
             <div key={col.title.pt}>
               <h3 className="font-title text-[1rem] tracking-[0.16em] uppercase text-foreground-dark mt-0 mb-4 pb-2 border-b border-foreground-dark/10">
@@ -76,25 +176,42 @@ export function MenuSection() {
               {col.items.map((item) => (
                 <div
                   key={item.name.pt}
-                  className="py-4 border-b border-foreground-dark/[0.07] last:border-0"
+                  className="py-3 border-b border-foreground-dark/[0.06] last:border-0"
                 >
-                  <div className="flex justify-between text-[0.92rem] font-medium text-foreground-dark mb-1">
-                    <span>{lang === "pt" ? item.name.pt : item.name.en}</span>
-                    <span className="text-accent ml-4 shrink-0 font-normal">{item.price}</span>
+                  <div className="flex justify-between items-start text-[0.9rem] font-medium text-foreground-dark mb-0.5">
+                    <span className="pr-4">{lang === "pt" ? item.name.pt : item.name.en}</span>
+                    <span className="text-accent shrink-0 font-normal">{item.price}</span>
                   </div>
-                  <p className="text-[0.85rem] mt-0 mb-0 text-foreground-dark-muted leading-relaxed">
-                    {lang === "pt" ? item.desc.pt : item.desc.en}
-                  </p>
+                  {(lang === "pt" ? item.desc.pt : item.desc.en) && (
+                    <p className="text-[0.82rem] mt-0 mb-0 text-foreground-dark-muted leading-relaxed">
+                      {lang === "pt" ? item.desc.pt : item.desc.en}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
           ))}
         </div>
 
-        <p className="mt-8 text-[0.82rem] text-foreground-dark-muted border-t border-foreground-dark/[0.07] pt-5">
+        {/* Kids */}
+        <div className="mt-10 pt-8 border-t border-foreground-dark/10">
+          <h3 className="font-title text-[1rem] tracking-[0.16em] uppercase text-foreground-dark mt-0 mb-4">
+            Kids
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12">
+            {kidsMenu.map((item) => (
+              <div key={item.name.pt} className="flex justify-between py-2.5 border-b border-foreground-dark/[0.06] text-[0.9rem]">
+                <span className="text-foreground-dark">{lang === "pt" ? item.name.pt : item.name.en}</span>
+                <span className="text-accent font-normal">{item.price}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <p className="mt-8 text-[0.78rem] text-foreground-dark-muted border-t border-foreground-dark/[0.07] pt-5">
           {t(
-            "Menu apresentado a título de exemplo. Contacte-nos para conhecer os pratos e sugestões do momento.",
-            "Menu shown as an example only. Please contact us to know the current dishes and specials."
+            "Os preços incluem IVA à taxa legal em vigor. Menu sujeito a alterações sazonais.",
+            "Prices include VAT at the legal rate. Menu subject to seasonal changes."
           )}
         </p>
       </div>
