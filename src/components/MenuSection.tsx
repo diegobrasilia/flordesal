@@ -1,4 +1,5 @@
 import { useLang } from "@/contexts/LangContext";
+import { QRCodeSVG } from "qrcode.react";
 
 const menuData = {
   entradas: {
@@ -234,6 +235,25 @@ export function MenuSection() {
             "Prices include VAT at the legal rate. Menu subject to seasonal changes."
           )}
         </p>
+
+        {/* QR Code */}
+        <div className="mt-10 pt-8 border-t border-foreground-dark/10 flex flex-col items-center gap-4">
+          <p className="text-[0.72rem] tracking-[0.25em] uppercase text-accent">
+            {t("Aceder ao menu", "Access menu")}
+          </p>
+          <div className="bg-white p-4 rounded-xl shadow-md inline-block">
+            <QRCodeSVG
+              value="https://flordesal.lovable.app/#menu"
+              size={160}
+              bgColor="#ffffff"
+              fgColor="#1a1a1a"
+              level="M"
+            />
+          </div>
+          <p className="text-[0.78rem] text-foreground-dark-muted">
+            flordesal.lovable.app
+          </p>
+        </div>
       </div>
     </section>
   );
