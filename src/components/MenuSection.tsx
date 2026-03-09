@@ -11,7 +11,7 @@ const menuData = {
       },
       {
         name: { pt: "Tábua de frios", en: "Charcuterie board" },
-        desc: { pt: "Com presunto de porco preto", en: "With black pork ham" },
+        desc: { pt: "", en: "" },
         price: "6,00 €",
       },
       {
