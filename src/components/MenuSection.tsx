@@ -208,7 +208,7 @@ export function MenuSection() {
                     <div className="flex justify-between items-start text-[0.9rem] font-medium text-foreground-dark mb-0.5">
                       <span className={`pr-4 lowercase first-letter:uppercase ${isAlheira ? "group-hover:text-accent transition-colors" : ""}`}>
                         {lang === "pt" ? item.name.pt : item.name.en}
-                        {isAlheira && <span className="ml-2 text-[0.7rem] text-accent opacity-70">📷</span>}
+                        
                       </span>
                       <span className="text-accent shrink-0 font-normal">{item.price}</span>
                     </div>
