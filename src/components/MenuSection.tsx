@@ -250,9 +250,16 @@ export function MenuSection() {
       <Dialog open={imgOpen} onOpenChange={setImgOpen}>
         <DialogContent className="max-w-lg p-0 overflow-hidden bg-background-light border-foreground-dark/10">
           <img src={alheiraImg} alt="Alheira grelhada com chouriço" className="w-full h-auto object-cover" />
-          <p className="px-5 py-4 text-[0.9rem] font-medium text-foreground-dark lowercase first-letter:uppercase">
-            {lang === "pt" ? "Alheira grelhada com chouriço salgadas" : "Grilled alheira with chouriço"}
-          </p>
+          <div className="px-5 py-4">
+            <p className="text-[0.9rem] font-medium text-foreground-dark lowercase first-letter:uppercase mb-1">
+              {lang === "pt" ? "Alheira grelhada com chouriço salgadas" : "Grilled alheira with chouriço"}
+            </p>
+            <p className="text-[0.82rem] text-foreground-dark-muted leading-relaxed">
+              {lang === "pt"
+                ? "Tradicional enchido de Mirandela com salteado de cogumelos e torrada azeitada"
+                : "Traditional Mirandela sausage with sautéed mushrooms and olive oil toast"}
+            </p>
+          </div>
         </DialogContent>
       </Dialog>
     </section>
