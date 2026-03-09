@@ -2,7 +2,19 @@
 <html lang="pt">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- iOS Safari viewport height fix: runs BEFORE React mounts -->
+    <script>
+      (function() {
+        function setH() {
+          var h = window.innerHeight;
+          document.documentElement.style.setProperty('--app-height', h + 'px');
+        }
+        setH();
+        window.addEventListener('resize', setH);
+        window.addEventListener('orientationchange', function() { setTimeout(setH, 300); });
+      })();
+    </script>
     <title>Flor de Sal – Restaurante · Esplanada · Bar – Mirandela</title>
     <meta name="description" content="Flor de Sal Restaurante · Esplanada · Bar em Mirandela, Portugal. Boa comida. Bom vinho. Boas pessoas. Aberto todos os dias, das 12h30 às 02h00.">
     <meta name="author" content="Flor de Sal" />
@@ -23,17 +35,6 @@
 
   <body>
     <div id="root"></div>
-    <!-- iOS Safari viewport height fix: runs before React -->
-    <script>
-      function setAppHeight() {
-        document.documentElement.style.setProperty('--app-height', window.innerHeight + 'px');
-      }
-      setAppHeight();
-      window.addEventListener('resize', setAppHeight);
-      window.addEventListener('orientationchange', function() {
-        setTimeout(setAppHeight, 200);
-      });
-    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
