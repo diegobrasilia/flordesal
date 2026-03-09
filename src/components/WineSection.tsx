@@ -22,11 +22,6 @@ const wineData = {
       { name: "Manical", price: "12,00 €" },
       { name: "Carixus", price: "15,00 €" },
       { name: "Quinta Corriçam Colheita Selecionada", price: "20,00 €" },
-    ],
-  },
-  tintos2: {
-    title: { pt: "Tintos (cont.)", en: "Red Wines (cont.)" },
-    items: [
       { name: "Quinta Alcayde – Calharis", price: "15,00 €" },
       { name: "Quinta Alcayde 14 Linhas", price: "18,00 €" },
       { name: "Casul Constante", price: "15,00 €" },
@@ -98,7 +93,7 @@ export function WineSection() {
 
         {/* Tintos — 2 colonnes côte à côte */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 mb-6">
-          {[wineData.tintos, wineData.tintos2].map((col) => (
+          {[wineData.tintos].map((col) => (
             <div key={col.title.pt}>
               <h3 className="font-title text-[1.4rem] tracking-[-0.01em] text-foreground-dark mt-0 mb-3 pb-2 border-b border-foreground-dark/10">
                 {col.title.pt}
