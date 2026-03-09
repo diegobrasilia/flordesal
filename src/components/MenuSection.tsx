@@ -107,7 +107,7 @@ const menuData = {
       {
         name: { pt: "Posta tradicional c/batatinha a muro e grelos salteados", en: "Traditional posta with oven potatoes and sautéed greens" },
         desc: { pt: "(1 pessoa)", en: "(1 person)" },
-        price: "—",
+        price: "16,00 €",
       },
       {
         name: { pt: "Panado grelhado", en: "Grilled breaded fillet" },
