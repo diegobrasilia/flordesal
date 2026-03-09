@@ -111,6 +111,7 @@ const menuData = {
       },
       {
         name: { pt: "Polvo afogado em azeite com arroz de forno", en: "Octopus in olive oil with oven rice" },
+        desc: { pt: "(2 pessoas)", en: "(2 persons)" },
         price: "49,00 €",
       },
       {
