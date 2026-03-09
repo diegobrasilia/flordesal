@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLang } from "@/contexts/LangContext";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import alheiraImg from "@/assets/alheira-grelhada.jpg";
+import alheiraImg from "@/assets/alheira-grelhada.png";
 
 const menuData = {
   entradas: {
@@ -205,17 +205,32 @@ export function MenuSection() {
                     className={`py-3 border-b border-foreground-dark/[0.06] last:border-0 ${isAlheira ? "cursor-pointer group" : ""}`}
                     onClick={isAlheira ? () => setImgOpen(true) : undefined}
                   >
-                    <div className="flex justify-between items-start text-[0.9rem] font-medium text-foreground-dark mb-0.5">
-                      <span className={`pr-4 lowercase first-letter:uppercase ${isAlheira ? "group-hover:text-accent transition-colors" : ""}`}>
-                        {lang === "pt" ? item.name.pt : item.name.en}
-                        
-                      </span>
-                      <span className="text-accent shrink-0 font-normal">{item.price}</span>
-                    </div>
-                    {(lang === "pt" ? item.desc.pt : item.desc.en) && (
-                      <p className="text-[0.82rem] mt-0 mb-0 text-foreground-dark-muted leading-relaxed">
-                        {lang === "pt" ? item.desc.pt : item.desc.en}
-                      </p>
+                    {isAlheira ? (
+                      <div className="flex justify-between items-center rounded-md bg-accent/10 border border-accent/30 px-3 py-2 group-hover:bg-accent/20 transition-colors">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="text-[0.85rem] font-medium text-accent lowercase first-letter:uppercase underline underline-offset-2 decoration-accent/50">
+                            {lang === "pt" ? item.name.pt : item.name.en}
+                          </span>
+                          <span className="text-[0.68rem] text-accent bg-accent/15 border border-accent/30 rounded px-1.5 py-0.5 shrink-0 uppercase tracking-wide">
+                            {lang === "pt" ? "ver foto" : "see photo"}
+                          </span>
+                        </div>
+                        <span className="text-accent shrink-0 font-normal text-[0.9rem] ml-3">{item.price}</span>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="flex justify-between items-start text-[0.9rem] font-medium text-foreground-dark mb-0.5">
+                          <span className="pr-4 lowercase first-letter:uppercase">
+                            {lang === "pt" ? item.name.pt : item.name.en}
+                          </span>
+                          <span className="text-accent shrink-0 font-normal">{item.price}</span>
+                        </div>
+                        {(lang === "pt" ? item.desc.pt : item.desc.en) && (
+                          <p className="text-[0.82rem] mt-0 mb-0 text-foreground-dark-muted leading-relaxed">
+                            {lang === "pt" ? item.desc.pt : item.desc.en}
+                          </p>
+                        )}
+                      </>
                     )}
                   </div>
                 );
