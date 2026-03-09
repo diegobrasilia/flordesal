@@ -93,7 +93,7 @@ export function WineSection() {
 
         {/* Tintos — 2 colonnes côte à côte */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 mb-6">
-          {[wineData.tintos, wineData.tintos2].map((col) => (
+          {[wineData.tintos].map((col) => (
             <div key={col.title.pt}>
               <h3 className="font-title text-[1.4rem] tracking-[-0.01em] text-foreground-dark mt-0 mb-3 pb-2 border-b border-foreground-dark/10">
                 {col.title.pt}
