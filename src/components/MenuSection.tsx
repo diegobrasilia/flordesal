@@ -197,22 +197,29 @@ export function MenuSection() {
               <h3 className="font-title text-[1.4rem] tracking-[-0.01em] text-foreground-dark mt-0 mb-4 pb-2 border-b border-foreground-dark/10">
                 {lang === "pt" ? col.title.pt : col.title.en}
               </h3>
-              {col.items.map((item) => (
-                <div
-                  key={item.name.pt}
-                  className="py-3 border-b border-foreground-dark/[0.06] last:border-0"
-                >
-                  <div className="flex justify-between items-start text-[0.9rem] font-medium text-foreground-dark mb-0.5">
-                    <span className="pr-4 lowercase first-letter:uppercase">{lang === "pt" ? item.name.pt : item.name.en}</span>
-                    <span className="text-accent shrink-0 font-normal">{item.price}</span>
+              {col.items.map((item) => {
+                const isAlheira = item.name.pt === "Alheira grelhada com chouriço salgadas";
+                return (
+                  <div
+                    key={item.name.pt}
+                    className={`py-3 border-b border-foreground-dark/[0.06] last:border-0 ${isAlheira ? "cursor-pointer group" : ""}`}
+                    onClick={isAlheira ? () => setImgOpen(true) : undefined}
+                  >
+                    <div className="flex justify-between items-start text-[0.9rem] font-medium text-foreground-dark mb-0.5">
+                      <span className={`pr-4 lowercase first-letter:uppercase ${isAlheira ? "group-hover:text-accent transition-colors" : ""}`}>
+                        {lang === "pt" ? item.name.pt : item.name.en}
+                        {isAlheira && <span className="ml-2 text-[0.7rem] text-accent opacity-70">📷</span>}
+                      </span>
+                      <span className="text-accent shrink-0 font-normal">{item.price}</span>
+                    </div>
+                    {(lang === "pt" ? item.desc.pt : item.desc.en) && (
+                      <p className="text-[0.82rem] mt-0 mb-0 text-foreground-dark-muted leading-relaxed">
+                        {lang === "pt" ? item.desc.pt : item.desc.en}
+                      </p>
+                    )}
                   </div>
-                  {(lang === "pt" ? item.desc.pt : item.desc.en) && (
-                    <p className="text-[0.82rem] mt-0 mb-0 text-foreground-dark-muted leading-relaxed">
-                      {lang === "pt" ? item.desc.pt : item.desc.en}
-                    </p>
-                  )}
-                </div>
-              ))}
+                );
+              })}
             </div>
           ))}
         </div>
