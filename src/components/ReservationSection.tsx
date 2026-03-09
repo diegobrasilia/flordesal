@@ -126,7 +126,7 @@ export function ReservationSection() {
                       </button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0 z-[200]" align="start">
-                       <Calendar
+                      <Calendar
                         mode="single"
                         selected={selectedDate}
                         onSelect={setSelectedDate}
@@ -138,7 +138,7 @@ export function ReservationSection() {
                   </Popover>
                 </div>
                 <div>
-                  <label className={labelClass}>{t("Hora", "Time")}</label>
+                  <label className={`${inputClass} max-w-[200px]`}>{t("Hora", "Time")}</label>
                   <input ref={timeRef} type="time" required className={inputClass} />
                 </div>
               </div>
