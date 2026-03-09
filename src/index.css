@@ -121,8 +121,9 @@
 
 /* iOS Safari full-height hero fix */
 .hero-full-height {
-  min-height: 100svh; /* fallback */
-  min-height: var(--app-height, 100svh);
+  min-height: 100vh;        /* browsers without dvh */
+  min-height: 100dvh;       /* modern Chrome/Firefox/Safari 15.4+ — excludes browser chrome */
+  min-height: var(--app-height, 100dvh); /* JS override for older Safari */
 }
 
 /* Hero fade-in-up animation */
