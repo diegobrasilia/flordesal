@@ -38,7 +38,7 @@ export default function QrCode() {
             value={MENU_URL}
             size={220}
             level="H"
-            fgColor="#b89660"
+            fgColor="#ffffff"
             bgColor="#0a0a0a"
           />
         </div>
