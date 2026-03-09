@@ -109,6 +109,11 @@ const menuData = {
         desc: { pt: "", en: "" },
         price: "14,99 €",
       },
+      {
+        name: { pt: "Frites", en: "Frites" },
+        desc: { pt: "", en: "" },
+        price: "3,50 €",
+      },
     ],
   },
   sobremesas: {
