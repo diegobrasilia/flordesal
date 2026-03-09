@@ -22,11 +22,6 @@ const wineData = {
       { name: "Manical", price: "12,00 €" },
       { name: "Carixus", price: "15,00 €" },
       { name: "Quinta Corriçam Colheita Selecionada", price: "20,00 €" },
-    ],
-  },
-  tintos2: {
-    title: { pt: "Tintos (cont.)", en: "Red Wines (cont.)" },
-    items: [
       { name: "Quinta Alcayde – Calharis", price: "15,00 €" },
       { name: "Quinta Alcayde 14 Linhas", price: "18,00 €" },
       { name: "Casul Constante", price: "15,00 €" },
