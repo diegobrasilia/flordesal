@@ -1,4 +1,5 @@
 import { useLang } from "@/contexts/LangContext";
+import { QRCodeSVG } from "qrcode.react";
 
 const menuData = {
   entradas: {
