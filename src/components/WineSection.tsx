@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { useLang } from "@/contexts/LangContext";
 
 const wineData = {
@@ -72,6 +74,54 @@ const wineData = {
   },
 };
 
+function WineAccordion({
+  title,
+  items,
+}: {
+  title: string;
+  items: { name: string; price: string }[];
+}) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="border-b border-foreground-dark/10 last:border-0">
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="w-full flex justify-between items-center py-4 text-left group"
+      >
+        <h3 className="font-title text-[1.4rem] tracking-[-0.01em] text-foreground-dark">
+          {title}
+        </h3>
+        <div className="flex items-center gap-3">
+          <span className="text-[0.75rem] tracking-widest uppercase text-foreground-dark-muted">
+            {items.length} vins
+          </span>
+          <ChevronDown
+            size={18}
+            className={`text-accent transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+          />
+        </div>
+      </button>
+
+      <div
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          open ? "max-h-[2000px] opacity-100 mb-4" : "max-h-0 opacity-0"
+        }`}
+      >
+        {items.map((item) => (
+          <div
+            key={item.name}
+            className="flex justify-between items-center py-2 border-b border-foreground-dark/[0.06] last:border-0"
+          >
+            <span className="text-[0.88rem] text-foreground-dark/80 pr-3">{item.name}</span>
+            <span className="text-[0.85rem] text-accent shrink-0">{item.price}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function WineSection() {
   const { t } = useLang();
 
@@ -91,37 +141,13 @@ export function WineSection() {
           )}
         </p>
 
-        {/* Tintos — 2 colonnes côte à côte */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 mb-6">
-          {[wineData.tintos].map((col) => (
-            <div key={col.title.pt}>
-              <h3 className="font-title text-[1.4rem] tracking-[-0.01em] text-foreground-dark mt-0 mb-3 pb-2 border-b border-foreground-dark/10">
-                {col.title.pt}
-              </h3>
-              {col.items.map((item) => (
-                <div key={item.name} className="flex justify-between items-center py-2 border-b border-foreground-dark/[0.06] last:border-0">
-                  <span className="text-[0.88rem] text-foreground-dark/80 pr-3">{item.name}</span>
-                  <span className="text-[0.85rem] text-accent shrink-0">{item.price}</span>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-
-        {/* Brancos, Rosés, Espumantes — 3 colonnes */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-6">
-          {[wineData.brancos, wineData.roses, wineData.espumantes].map((col) => (
-            <div key={col.title.pt}>
-              <h3 className="font-title text-[1.4rem] tracking-[-0.01em] text-foreground-dark mt-0 mb-3 pb-2 border-b border-foreground-dark/10">
-                {col.title.pt}
-              </h3>
-              {col.items.map((item) => (
-                <div key={item.name} className="flex justify-between items-center py-2 border-b border-foreground-dark/[0.06] last:border-0">
-                  <span className="text-[0.88rem] text-foreground-dark/80 pr-3">{item.name}</span>
-                  <span className="text-[0.85rem] text-accent shrink-0">{item.price}</span>
-                </div>
-              ))}
-            </div>
+        <div className="divide-y divide-foreground-dark/10">
+          {Object.values(wineData).map((col) => (
+            <WineAccordion
+              key={col.title.pt}
+              title={t(col.title.pt, col.title.en)}
+              items={col.items}
+            />
           ))}
         </div>
 
