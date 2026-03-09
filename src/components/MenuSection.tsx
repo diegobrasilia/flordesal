@@ -173,6 +173,7 @@ const kidsMenu = [
 
 export function MenuSection() {
   const { lang, t } = useLang();
+  const [imgOpen, setImgOpen] = useState(false);
 
   return (
     <section id="menu" className="py-24 bg-background-light">
