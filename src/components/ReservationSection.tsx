@@ -138,8 +138,8 @@ export function ReservationSection() {
                   </Popover>
                 </div>
                 <div>
-                  <label className={`${inputClass} max-w-[200px]`}>{t("Hora", "Time")}</label>
-                  <input ref={timeRef} type="time" required className={inputClass} />
+                  <label className={labelClass}>{t("Hora", "Time")}</label>
+                  <input ref={timeRef} type="time" required className={`${inputClass} max-w-[200px]`} />
                 </div>
               </div>
 
