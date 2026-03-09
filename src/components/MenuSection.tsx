@@ -189,7 +189,7 @@ export function MenuSection() {
                   className="py-3 border-b border-foreground-dark/[0.06] last:border-0"
                 >
                   <div className="flex justify-between items-start text-[0.9rem] font-medium text-foreground-dark mb-0.5">
-                    <span className="pr-4">{lang === "pt" ? item.name.pt : item.name.en}</span>
+                    <span className="pr-4 lowercase">{lang === "pt" ? item.name.pt : item.name.en}</span>
                     <span className="text-accent shrink-0 font-normal">{item.price}</span>
                   </div>
                   {(lang === "pt" ? item.desc.pt : item.desc.en) && (
