@@ -139,7 +139,7 @@ export function ReservationSection() {
                 </div>
                 <div>
                   <label className={labelClass}>{t("Hora", "Time")}</label>
-                  <input ref={timeRef} type="time" required className={`${inputClass} max-w-[400px]`} />
+                  <input ref={timeRef} type="time" required className={`${inputClass} max-w-[350px]`} />
                 </div>
               </div>
 
