@@ -1,4 +1,7 @@
+import { useState } from "react";
 import { useLang } from "@/contexts/LangContext";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import alheiraImg from "@/assets/alheira-grelhada.jpg";
 
 const menuData = {
   entradas: {
