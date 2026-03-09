@@ -59,6 +59,11 @@ const menuData = {
         desc: { pt: "", en: "" },
         price: "12,00 €",
       },
+      {
+        name: { pt: "Alheira reserva de caça", en: "Reserve game alheira" },
+        desc: { pt: "", en: "" },
+        price: "12,00 €",
+      },
     ],
   },
   principal: {
