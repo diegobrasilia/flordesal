@@ -219,21 +219,12 @@ export function MenuSection() {
             Kids
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12">
-            {kidsMenu.map((item) => {
-              const isHighlightedKid = item.name.pt === "Bifinho vitela" || item.name.pt === "Bifinho frango";
-              return (
-                <div key={item.name.pt} className="flex justify-between py-2.5 border-b border-foreground-dark/[0.06] text-[0.9rem]">
-                  <span
-                    className={`text-foreground-dark lowercase first-letter:uppercase ${
-                      isHighlightedKid ? "font-semibold" : ""
-                    }`}
-                  >
-                    {lang === "pt" ? item.name.pt : item.name.en}
-                  </span>
-                  <span className="text-accent font-normal">{item.price}</span>
-                </div>
-              );
-            })}
+            {kidsMenu.map((item) => (
+              <div key={item.name.pt} className="flex justify-between py-2.5 border-b border-foreground-dark/[0.06] text-[0.9rem]">
+                <span className="text-foreground-dark lowercase first-letter:uppercase">{lang === "pt" ? item.name.pt : item.name.en}</span>
+                <span className="text-accent font-normal">{item.price}</span>
+              </div>
+            ))}
           </div>
         </div>
 
