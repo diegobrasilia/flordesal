@@ -8,7 +8,7 @@ const menuData = {
     title: { pt: "Entradas", en: "Starters" },
     items: [
       {
-        name: { pt: "Alheira grelhada com cogumelos salteados", en: "Grilled sausage with sautéed mushrooms" },
+        name: { pt: "Alheira grelhada com cogumelos salteados", en: "Grilled alheira with sautéed mushrooms" },
         desc: { pt: "", en: "" },
         price: "7,00 €",
       },
@@ -23,7 +23,7 @@ const menuData = {
         price: "7,00 €",
       },
       {
-        name: { pt: "Tábua mista", en: "Mixed board" },
+        name: { pt: "Tábua mista", en: "Mixed platter" },
         desc: { pt: "", en: "" },
         price: "12,00 €",
       },
@@ -53,7 +53,7 @@ const menuData = {
         price: "12,00 €",
       },
       {
-        name: { pt: "Alheira de galo", en: "Alheira with sausage" },
+        name: { pt: "Alheira de galo", en: "Rooster alheira" },
         desc: { pt: "", en: "" },
         price: "12,00 €",
       },
@@ -73,7 +73,7 @@ const menuData = {
     title: { pt: "Prato Principal", en: "Main Course" },
     items: [
       {
-        name: { pt: "Secretos de porco preto com cebola caramelizada", en: "Black pork ribs with caramelized onions" },
+        name: { pt: "Secretos de porco preto com cebola caramelizada", en: "Black pork secreto with caramelized onions" },
         desc: { pt: "", en: "" },
         price: "16,00 €",
       },
@@ -108,8 +108,8 @@ const menuData = {
         price: "16,00 €",
       },
       {
-        name: { pt: "Posta tradicional com batatinha a muro e grelhos salteados", en: "Traditional steak with potato wedges and sautéed vegetables" },
-        desc: { pt: "( 1 pessoa )", en: "( 1 people )" },
+        name: { pt: "Posta tradicional com batatinha a muro e grelhos salteados", en: "Traditional steak with smashed potatoes and sautéed greens" },
+        desc: { pt: "( 1 pessoa )", en: "( 1 person )" },
         price: "16,00 €",
       },
       {
@@ -157,8 +157,8 @@ const menuData = {
 };
 
 const kidsMenu = [
-  { name: { pt: "Bifinho vitela", en: "Veal fillet kids" }, price: "8,50 €" },
-  { name: { pt: "Bifinho frango", en: "Chicken fillet kids" }, price: "8,00 €" },
+  { name: { pt: "Bifinho vitela", en: "Kids' veal steak" }, price: "8,50 €" },
+  { name: { pt: "Bifinho frango", en: "Kids' chicken steak" }, price: "8,00 €" },
 ];
 
 export function MenuSection() {
