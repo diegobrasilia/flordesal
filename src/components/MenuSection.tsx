@@ -218,9 +218,9 @@ export function MenuSection() {
           <h3 className="font-title text-[1.4rem] tracking-[-0.01em] text-foreground-dark mt-0 mb-4">
             Kids
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12">
             {kidsMenu.map((item) => (
-              <div key={item.name.pt} className="flex justify-between py-2.5 border-b border-foreground-dark/[0.06] text-[0.9rem]">
+              <div key={item.name.pt} className="flex justify-between py-2.5 border-b border-foreground-dark/[0.06] text-[0.9rem] font-medium text-foreground-dark mb-0.5">
                 <span className="text-foreground-dark lowercase first-letter:uppercase">{lang === "pt" ? item.name.pt : item.name.en}</span>
                 <span className="text-accent font-normal">{item.price}</span>
               </div>
@@ -232,7 +232,7 @@ export function MenuSection() {
           {t(
             "Os preços incluem IVA à taxa legal em vigor. Menu sujeito a alterações sazonais.",
             "Prices include VAT at the legal rate. Menu subject to seasonal changes."
-          )}
+          )} 
         </p>*/}
       </div>
 
