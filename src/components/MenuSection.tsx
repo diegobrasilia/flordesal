@@ -215,7 +215,7 @@ export function MenuSection() {
 
         {/* Kids */}
         <div className="mt-10 pt-8 border-t border-foreground-dark/10">
-          <h3 className="font-title text-[1.4rem] tracking-[-0.01em] text-foreground-dark mt-0 mb-4">
+          <h3 className="font-title text-[1.4rem] tracking-[-0.01em] text-foreground-dark mt-0 mb-4 pb-2 border-b border-foreground-dark/10">
             Kids
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12">
