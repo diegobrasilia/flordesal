@@ -8,34 +8,34 @@ const menuData = {
     title: { pt: "Entradas", en: "Starters" },
     items: [
       {
-        name: { pt: "Alheira grelhada com chouriço salgadas", en: "Grilled alheira with chouriço" },
+        name: { pt: "Alheira grelhada com cogumelos salteados", en: "Grilled sausage with sautéed mushrooms" },
         desc: { pt: "", en: "" },
         price: "7,00 €",
       },
       {
-        name: { pt: "Tábua de frios", en: "Charcuterie board" },
+        name: { pt: "Tachinho de ovos rotos com presunto de porco bísaro", en: "Small pan of broken eggs with Bísaro pork ham" },
         desc: { pt: "", en: "" },
         price: "6,00 €",
       },
       {
-        name: { pt: "Bolinhos crocantes de pimento ao coco e molho de alho e salsinha", en: "Crispy pepper & coconut balls with garlic-parsley sauce" },
+        name: { pt: "Repolgas crocantes com presunto de coço e emulsão de alho selvagem", en: "Crispy repolgas with ham and wild garlic emulsion" },
         desc: { pt: "", en: "" },
         price: "7,00 €",
       },
       {
-        name: { pt: "Salada mista", en: "Mixed salad" },
+        name: { pt: "Tábua mista", en: "Mixed board" },
         desc: { pt: "", en: "" },
-        price: "3,20 €",
+        price: "12,00 €",
       },
       {
-        name: { pt: "Salada de grão de carne com cebola caramelizada e vinagrete de mel", en: "Chickpea salad with caramelised onion and honey vinaigrette" },
+        name: { pt: "Salada de queijo de cabra com cebola caramelizada e vinagrete de mel", en: "Goat cheese salad with caramelized onions and honey vinaigrette" },
         desc: { pt: "", en: "" },
-        price: "4,30 €",
+        price: "9,00 €",
       },
       {
-        name: { pt: "Queijo cheese assado", en: "Baked cheese" },
+        name: { pt: "Queijo chevre assada", en: "Baked goat cheese" },
         desc: { pt: "", en: "" },
-        price: "3,50 €",
+        price: "6,00 €",
       },
     ],
   },
@@ -45,7 +45,7 @@ const menuData = {
       {
         name: { pt: "Alheira tradicional", en: "Traditional alheira" },
         desc: { pt: "", en: "" },
-        price: "10,00 €",
+        price: "12,00 €",
       },
       {
         name: { pt: "Alheira com presunto", en: "Alheira with ham" },
@@ -53,12 +53,12 @@ const menuData = {
         price: "12,00 €",
       },
       {
-        name: { pt: "Almôndegas de aves", en: "Poultry meatballs" },
+        name: { pt: "Alheira de galo", en: "Alheira with sausage" },
         desc: { pt: "", en: "" },
         price: "12,00 €",
       },
       {
-        name: { pt: "Alheira regular de caça", en: "Game alheira" },
+        name: { pt: "Alheira de javali", en: "Wild boar sausage" },
         desc: { pt: "", en: "" },
         price: "12,00 €",
       },
@@ -73,49 +73,49 @@ const menuData = {
     title: { pt: "Prato Principal", en: "Main Course" },
     items: [
       {
-        name: { pt: "Secretos de porco preto à cebolada e ambarilhoa", en: "Black pork secreto with onion confit" },
+        name: { pt: "Secretos de porco preto com cebola caramelizada", en: "Black pork ribs with caramelized onions" },
         desc: { pt: "", en: "" },
-        price: "26,00 €",
+        price: "16,00 €",
       },
       {
-        name: { pt: "Costeleta de vitela grelhada", en: "Grilled veal chop" },
+        name: { pt: "Costeleta de vitela grelhada com batata a murro e grelhos", en: "Grilled veal chop with smashed potatoes and grilled vegetables" },
         desc: { pt: "", en: "" },
-        price: "27,00 €",
+        price: "17,00 €",
       },
       {
-        name: { pt: "Pasta fresca com camarinho a meio e ervas do jardim", en: "Fresh pasta with prawns and garden herbs" },
+        name: { pt: "Costeletão de vitela laminado", en: "Veal chop, sliced" },
         desc: { pt: "", en: "" },
-        price: "15,00 €",
+        price: "49,00 €/KG",
       },
       {
-        name: { pt: "Risoto de tomate e cogumelo", en: "Tomato and mushroom risotto" },
+        name: { pt: "Risoto de tomate e ossobuco", en: "Tomato and ossobuco risotto" },
         desc: { pt: "", en: "" },
-        price: "13,00 €",
+        price: "17,00 €",
       },
       {
-        name: { pt: "Risoto de tomate e camarão", en: "Tomato and prawn risotto" },
+        name: { pt: "Risoto de tomate e camarão", en: "Tomato and shrimp risotto" },
         desc: { pt: "", en: "" },
-        price: "13,00 €",
+        price: "17,00 €",
       },
       {
-        name: { pt: "Lombo de bacalhau à lagareiro de Braga", en: "Cod loin à lagareiro Braga style" },
+        name: { pt: "Lombo de bacalhau com crosta de broa", en: "Cod loin with cornbread crust" },
         desc: { pt: "", en: "" },
-        price: "28,00 €",
+        price: "16,00 €",
       },
       {
-        name: { pt: "Polvo assado em azeite com arroz de perno", en: "Roasted octopus in olive oil with rice" },
+        name: { pt: "Salmão grelhado", en: "Grilled salmon" },
         desc: { pt: "", en: "" },
-        price: "30,00 €",
+        price: "16,00 €",
       },
       {
-        name: { pt: "Panado grelhado", en: "Grilled breaded fillet" },
-        desc: { pt: "", en: "" },
-        price: "14,99 €",
+        name: { pt: "Posta tradicional com batatinha a muro e grelhos salteados", en: "Traditional steak with potato wedges and sautéed vegetables" },
+        desc: { pt: "( 1 pessoa )", en: "( 1 people )" },
+        price: "16,00 €",
       },
       {
-        name: { pt: "Frites", en: "Frites" },
-        desc: { pt: "", en: "" },
-        price: "3,50 €",
+        name: { pt: "Polvo afogado em azeite com arroz de forno", en: "Octopus drowned in olive oil with oven-baked rice" },
+        desc: { pt: "( 2 pessoas )", en: "( 2 people )" },
+        price: "49,00 €",
       },
     ],
   },
@@ -128,7 +128,7 @@ const menuData = {
         price: "5,00 €",
       },
       {
-        name: { pt: "Petit gâteau de chocolate", en: "Chocolate lava cake" },
+        name: { pt: "Petit gateau de chocolate", en: "Chocolate lava cake" },
         desc: { pt: "", en: "" },
         price: "5,00 €",
       },
@@ -140,7 +140,7 @@ const menuData = {
       {
         name: { pt: "Corte de frutas da época", en: "Seasonal fruit platter" },
         desc: { pt: "", en: "" },
-        price: "2,50 €",
+        price: "3,50 €",
       },
       {
         name: { pt: "Pêra bêbada", en: "Drunken pear" },
@@ -150,15 +150,15 @@ const menuData = {
       {
         name: { pt: "Sobremesa do dia", en: "Dessert of the day" },
         desc: { pt: "Pergunte ao seu servidor", en: "Ask your server" },
-        price: "6,00 €",
+        price: "4,00 €",
       },
     ],
   },
 };
 
 const kidsMenu = [
-  { name: { pt: "Brindão d'fela", en: "Veal fillet kids" }, price: "8,50 €" },
-  { name: { pt: "Brindão frango", en: "Chicken fillet kids" }, price: "8,00 €" },
+  { name: { pt: "Bifinho vitela", en: "Veal fillet kids" }, price: "8,50 €" },
+  { name: { pt: "Bifinho frango", en: "Chicken fillet kids" }, price: "8,00 €" },
 ];
 
 export function MenuSection() {
@@ -188,7 +188,7 @@ export function MenuSection() {
                 {lang === "pt" ? col.title.pt : col.title.en}
               </h3>
               {col.items.map((item) => {
-                const isAlheira = item.name.pt === "Alheira grelhada com chouriço salgadas";
+                const isAlheira = item.name.pt === "Alheira grelhada com cogumelos salteados";
                 return (
                   <div
                     key={item.name.pt}
@@ -228,12 +228,12 @@ export function MenuSection() {
           </div>
         </div>
 
-        <p className="mt-8 text-[0.78rem] text-foreground-dark-muted border-t border-foreground-dark/[0.07] pt-5">
+        {/* <p className="mt-8 text-[0.78rem] text-foreground-dark-muted border-t border-foreground-dark/[0.07] pt-5">
           {t(
             "Os preços incluem IVA à taxa legal em vigor. Menu sujeito a alterações sazonais.",
             "Prices include VAT at the legal rate. Menu subject to seasonal changes."
           )}
-        </p>
+        </p>*/}
       </div>
 
       <Dialog open={imgOpen} onOpenChange={setImgOpen}>

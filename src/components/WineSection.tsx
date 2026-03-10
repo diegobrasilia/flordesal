@@ -151,12 +151,12 @@ export function WineSection() {
           ))}
         </div>
 
-        <p className="mt-10 text-[0.78rem] text-foreground-dark-muted border-t border-foreground-dark/[0.07] pt-5">
+         {/* <p className="mt-10 text-[0.78rem] text-foreground-dark-muted border-t border-foreground-dark/[0.07] pt-5">
           {t(
             "Preços incluem IVA. Carta sujeita a disponibilidade de stock.",
             "Prices include VAT. Wine list subject to stock availability."
           )}
-        </p>
+        </p>*/}
       </div>
     </section>
   );
